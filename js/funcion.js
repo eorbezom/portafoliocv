@@ -3,23 +3,109 @@ const toolsContainer = document.getElementById('tools-marquee');
 if (toolsContainer) {
 
   const tools = `
-    <div class="text-center min-w-[170px] px-4"><i class="fab fa-java text-5xl text-orange-500"></i><p class="mt-2">Java</p></div>
-    <div class="text-center min-w-[170px] px-4"><i class="fas fa-code-branch text-5xl text-blue-500"></i><p class="mt-2">Git</p></div>
-    <div class="text-center min-w-[170px] px-4"><i class="fab fa-linux text-5xl text-yellow-400"></i><p class="mt-2">Linux</p></div>
-    <div class="text-center min-w-[170px] px-4"><i class="fas fa-database text-5xl text-blue-600"></i><p class="mt-2">MongoDB</p></div>
-    <div class="text-center min-w-[170px] px-4"><i class="fas fa-database text-5xl text-emerald-500"></i><p class="mt-2">PostgreSQL</p></div>
-    <div class="text-center min-w-[170px] px-4"><i class="fas fa-globe text-5xl text-sky-400"></i><p class="mt-2">HTML/CSS/JS</p></div>
-    <div class="text-center min-w-[170px] px-4"><i class="fab fa-figma text-5xl text-pink-500"></i><p class="mt-2">Figma</p></div>
-    <div class="text-center min-w-[170px] px-4"><i class="fas fa-video text-5xl text-red-500"></i><p class="mt-2">Filmora</p></div>
-    <div class="text-center min-w-[170px] px-4"><i class="fas fa-video text-5xl text-purple-500"></i><p class="mt-2">DaVinci Resolve</p></div>
-    <div class="text-center min-w-[170px] px-4"><i class="fas fa-laptop-code text-5xl text-cyan-400"></i><p class="mt-2">VS Code</p></div>
+    
+    <div class="tool-card">
+      <i class="fab fa-java text-orange-500"></i>
+      <p>Java</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fas fa-leaf text-green-500"></i>
+      <p>STS4</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fas fa-globe text-sky-400"></i>
+      <p>HTML/CSS/JS</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fas fa-code-branch text-red-500"></i>
+      <p>Git</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fab fa-github text-white"></i>
+      <p>GitHub</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fas fa-laptop-code text-cyan-400"></i>
+      <p>VS Code</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fas fa-database text-emerald-500"></i>
+      <p>PostgreSQL</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fas fa-database text-blue-500"></i>
+      <p>MongoDB</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fas fa-server text-amber-400"></i>
+      <p>Oracle</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fas fa-fire text-orange-500"></i>
+      <p>Firebase</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fas fa-cloud text-purple-400"></i>
+      <p>Render</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fas fa-rocket text-white"></i>
+      <p>Vercel</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fab fa-linux text-yellow-400"></i>
+      <p>Linux</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fab fa-figma text-pink-500"></i>
+      <p>Figma</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fas fa-image text-indigo-400"></i>
+      <p>Pixlr</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fas fa-video text-orange-400"></i>
+      <p>OBS Studio</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fas fa-video text-red-500"></i>
+      <p>Filmora</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fas fa-video text-purple-500"></i>
+      <p>DaVinci Resolve</p>
+    </div>
+
+    <div class="tool-card">
+      <i class="fas fa-file-word text-blue-500"></i>
+      <p>Office 365</p>
+    </div>
+
   `;
 
-  // duplicamos para bucle infinito
   toolsContainer.innerHTML = tools + tools;
 
   let pos = 0;
   let paused = false;
+  const speed = 0.6;
 
   toolsContainer.addEventListener("mouseenter", () => paused = true);
   toolsContainer.addEventListener("mouseleave", () => paused = false);
@@ -28,7 +114,7 @@ if (toolsContainer) {
 
     if (!paused) {
 
-      pos += 0.5;
+      pos += speed;
 
       if (pos >= toolsContainer.scrollWidth / 2) {
         pos = 0;
@@ -106,3 +192,36 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", updateSlider);
 
 });
+
+// ==================== MODAL TÉRMINOS ====================
+
+const openTerms = document.getElementById("openTerms");
+const closeTerms = document.getElementById("closeTerms");
+const termsModal = document.getElementById("termsModal");
+
+if(openTerms && closeTerms && termsModal){
+
+    openTerms.addEventListener("click", (e) => {
+
+        e.preventDefault();
+
+        termsModal.classList.remove("hidden");
+        termsModal.classList.add("flex");
+    });
+
+    closeTerms.addEventListener("click", () => {
+
+        termsModal.classList.add("hidden");
+        termsModal.classList.remove("flex");
+    });
+
+    termsModal.addEventListener("click", (e) => {
+
+        if(e.target === termsModal){
+
+            termsModal.classList.add("hidden");
+            termsModal.classList.remove("flex");
+        }
+    });
+
+}

@@ -13,6 +13,43 @@
 }
 
 
+.marquee-container{
+    overflow:hidden;
+    width:100%;
+}
+
+.marquee-track{
+    display:flex;
+    gap:24px;
+    width:max-content;
+}
+
+.tool-card{
+    min-width:180px;
+    background:#18181b;
+    border:1px solid #27272a;
+    border-radius:20px;
+    padding:24px;
+    text-align:center;
+    transition:.3s;
+}
+
+.tool-card:hover{
+    transform:translateY(-8px);
+    border-color:#10b981;
+    box-shadow:0 0 25px rgba(16,185,129,.25);
+}
+
+.tool-card i{
+    font-size:3rem;
+    margin-bottom:12px;
+}
+
+.tool-card p{
+    font-weight:600;
+}
+
+
 .green-glow {
   text-shadow: 0 0 15px rgb(16 185 129);
 }
