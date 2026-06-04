@@ -1,8 +1,9 @@
 
 // ==================== ANALYTICS ====================
-import { inject } from "@vercel/analytics";
+//import { inject } from "@vercel/analytics";
 
-inject();
+//inject();
+//console.log("Analytics cargado");
 // ==================== CARRUSEL HERRAMIENTAS ====================
 const toolsContainer = document.getElementById('tools-marquee');
 
