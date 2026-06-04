@@ -1,650 +1,958 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ermenigildo Orbezo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="input.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ermenigildo Orbezo</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="input.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-</head>
-
-<body class="bg-zinc-950 text-zinc-100">
-
-  <!-- Navbar con Hamburguesa -->
-  <nav class="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 border-b border-emerald-900">
-    <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-emerald-400">Portafolio</h1>
-
-      <!-- Botón Hamburguesa -->
-      <button id="menu-btn" class="md:hidden text-3xl text-white">
-        <i class="fas fa-bars"></i>
-      </button>
-      <!-- Menú Desktop -->
-      <div class="hidden md:flex gap-8">
-        <a href="#proyectos" class="hover:text-emerald-400 transition">Proyectos</a>
-        <a href="#herramientas" class="hover:text-emerald-400 transition">Herramientas</a>
-        <a href="#experiencia" class="hover:text-emerald-400 transition">Experiencia</a>
-        <a href="#educacion" class="hover:text-emerald-400 transition">Educación</a>
-        <a href="#contacto" class="hover:text-emerald-400 transition">Contacto</a>
-      </div>
-    </div>
-    <!-- Menú Mobile -->
-    <div id="mobile-menu" class="hidden md:hidden bg-zinc-950 border-t border-zinc-800 px-6 py-6">
-      <div class="flex flex-col gap-5 text-lg">
-        <a href="#proyectos" class="hover:text-emerald-400 transition">Proyectos</a>
-        <a href="#herramientas" class="hover:text-emerald-400 transition">Herramientas</a>
-        <a href="#experiencia" class="hover:text-emerald-400 transition">Experiencia</a>
-        <a href="#educacion" class="hover:text-emerald-400 transition">Educación</a>
-        <a href="#contacto" class="hover:text-emerald-400 transition">Contacto</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HERO  -->
-  <section class="relative min-h-screen flex items-center pt-20 overflow-hidden fondo-hero">
-    <div class="absolute inset-0 bg-black/90"></div>
-    <div class="max-w-7xl mx-auto px-6 relative z-10 h-screen">
-      <div class="grid md:grid-cols-2 items-center h-full">
-
-        <div class="space-y-6">
-          <h2 class="text-emerald-400 text-lg font-medium">¡Hola! Soy</h2>
-          <h1 class="text-6xl md:text-7xl font-bold leading-tight green-glow">Ermenigildo Orbezo</h1>
-          <p class="text-3xl text-emerald-300">Tecnico Diseño y Desarrollo de Software</p>
-
-          <p class="text-lg text-zinc-300 max-w-md">
-            Apasionado por el desarrollo de software con Java y arquitectura MVC.
-            Me motiva crear aplicaciones robustas y escalables, Me gusta liderar equipos y estoy en constante
-            aprendizaje
-            de nuevas tecnologías para convertir ideas en soluciones reales.
-          </p>
-          <div class="flex flex-wrap gap-6 text-sm">
-            <a href="tel:+51919750692" class="flex items-center gap-2 hover:text-emerald-400 transition">
-              <i class="fas fa-phone"></i> +51 919 750 692
-            </a>
-            <a href="mailto:ermenigildo.orbezo@gmail.com"
-              class="flex items-center gap-2 hover:text-emerald-400 transition">
-              <i class="fas fa-envelope"></i> eorbezo99@gmail.com
-            </a>
-            <div class="flex items-center gap-2">
-              <i class="fas fa-map-marker-alt"></i> Lima, Perú
-            </div>
-          </div>
-          <div class="flex gap-4 pt-6">
-            <a href="/doc/CV-Ermenigildo-Orbezo-Martinez.pdf" download
-              class="bg-emerald-500 hover:bg-emerald-600 px-8 py-4 rounded-xl font-medium transition text-2xl flex items-center gap-2">
-              Descargar CV
-            </a>
-            <a href="https://wa.me/51919750692?text=Hola%2C%20hemos%20visto%20tu%20CV%20y%20estamos%20interesados%20en%20una%20reuni%C3%B3n%20de%20entrevista%20contigo."
-              target="_blank" class="flex items-center gap-2 border border-emerald-500 hover:bg-emerald-500/10
-             px-8 py-4 rounded-xl font-medium transition"><i class="fab fa-whatsapp text-2xl"></i>Contáctame</a>
-          </div>
-        </div>
-
-        <!-- IMAGEN  -->
-        <div class="hidden md:flex items-center justify-end h-full">
-          <img src="/img/123.jpg" alt="Ermenigildo Orbezo" class="w-[520px] h-[520px] object-cover 
-                    border-8 border-emerald-500 
-                    rounded-full
-                    shadow-2xl 
-                    drop-shadow-[0_0_40px_rgba(16,185,129,0.7)]
-                    drop-shadow-[0_35px_60px_rgba(0,0,0,0.9)]
-                    brightness-110">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====================== PROYECTOS ====================== -->
-  <section id="proyectos" class="py-20 overflow-hidden bg-gradient-to-b from-black via-zinc-900 to-black">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center mb-12 green-glow">Proyectos Destacados</h2>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-        <!-- Proyecto 1 -->
-        <div class="bg-zinc-800 rounded-3xl overflow-hidden hover:scale-105 transition-all group">
-          <img src="/img/lavadora.png" alt="Proyecto 1" class="w-full h-56 object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Lavaplus</h3>
-            <p class="text-zinc-400 text-sm line-clamp-3">Sistema web para gestionar órdenes, clientes y facturación de
-              una lavandería. Desarrollado con Html css MongoDB.</p>
-            <a href="https://lavapluz-d947a.web.app/" target="_blank"
-              class="mt-4 inline-block text-emerald-400 text-sm font-medium hover:text-emerald-300 transition"> Ver
-              Proyecto →</a>
-          </div>
-        </div>
-
-        <!-- Proyecto 2 -->
-        <div class="bg-zinc-800 rounded-3xl overflow-hidden hover:scale-105 transition-all group">
-          <img src="/img/tienda.png" alt="Proyecto 2" class="w-full h-52 object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Coquette Grirls</h3>
-            <p class="text-zinc-400 text-sm line-clamp-3">Tienda online de ropa femenina con carrito de compras y panel
-              administrativo. Desarrollado con Html, css y JavaScript.</p>
-            <a href="https://coquette-girls.web.app/" target="_blank"
-              class="mt-4 inline-block text-emerald-400 text-sm font-medium hover:text-emerald-300 transition"> Ver
-              Proyecto →</a>
-          </div>
-        </div>
-
-        <!-- Proyecto 3 -->
-        <div class="bg-zinc-800 rounded-3xl overflow-hidden hover:scale-105 transition-all group">
-          <img src="/img/biodigestor.jpg" alt="Proyecto 3" class="w-full h-52 object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Metanix sac</h3>
-            <p class="text-zinc-400 text-sm line-clamp-3">Página web informativa para Metanix SAC, empresa especializada
-              en biodigestores. Presenta sus productos, beneficios ambientales y soluciones para el tratamiento de
-              residuos orgánicos de manera moderna y profesional</p>
-            <a href="https://metanix-90deb.web.app/index.html" target="_blank"
-              class="mt-4 inline-block text-emerald-400 text-sm font-medium hover:text-emerald-300 transition"> Ver
-              Proyecto →</a>
-          </div>
-        </div>
-        <!-- Proyecto 4 -->
-        <div class="bg-zinc-800 rounded-3xl overflow-hidden hover:scale-105 transition-all group">
-          <img src="/img/ibi.jpg" alt="Proyecto 4" class="w-full h-52 object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Ibillor</h3>
-            <p class="text-zinc-400 text-sm line-clamp-3">Sistema de visualización de datos con gráficos interactivos.
-            </p>
-            <a href="https://ibillor.vercel.app/index.html" target="_blank"
-              class="mt-4 inline-block text-emerald-400 text-sm font-medium hover:text-emerald-300 transition"> Ver
-              Proyecto →</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- EDUCACIÓN -->
-  <section id="educacion" class="bg-zinc-1000 educacion-section relative overflow-hidden">
-    <div class="absolute inset-0 bg-black/95"></div>
-    <div class="max-w-7xl mx-auto px-6 relative z-10">       
-        <h2 class="text-4xl font-bold text-center mb-16 green-glow">Formación Académica</h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center min-h-[80vh]">            
-            <div class="space-y-8 md:text-right">
-                <div>
-                    <h3 class="text-2xl font-semibold">Técnico en Diseño y Desarrollo de Software</h3>
-                    <p class="text-emerald-400">Instituto Certus — 2023 - 2025</p>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-semibold">Educación Secundaria Completa</h3>
-                    <p class="text-emerald-400">CEBA Francisco Bolognesi Cervantes — 2019 - 2022</p>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-semibold">Programa de Inglés Nivel Intermedio B1 (2025)</h3>
-                    <p class="text-emerald-400">Instituto de Educación Superior Privado CERTUS</p>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-semibold">CNAV7: Switching, Routing and Wireless Essentials (2024)</h3>
-                    <p class="text-emerald-400">Cisco Networking Academy</p>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-semibold">Java Fundamentos (2025)</h3>
-                    <p class="text-emerald-400">Escuela Peruana de Tecnología IEPTEN S.A.C</p>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-semibold">Oratoria, Liderazgo y Motivación (2024)</h3>
-                    <p class="text-emerald-400">Centro Cultural Taller de Expresión TEA</p>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-semibold">MTPE Administración de Amenazas Cibernéticas (2026)</h3>
-                    <p class="text-emerald-400">Cisco Networking Academy</p>
-                </div>
-            </div>            
-            <div class="flex justify-center md:justify-end">
-                <img src="/img/foto2.png"
-                    alt="Exponiendo Proyecto"
-                    class="w-full max-w-[620px] md:max-w-[680px]
-                    aspect-square object-cover
-                    rounded-3xl border-4 border-emerald-500
-                    shadow-2xl hover:scale-110
-                    transition-transform duration-500 cursor-pointer">
-            </div>
-        </div>
-    </div>
-</section>
-  <!-- EXPERIENCIA -->
-  <section id="experiencia" class="py-20">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center mb-12 font-bold leading-tight green-glow">Experiencia Laboral</h2>
+  <body class="bg-zinc-950 text-zinc-100">
+    <!-- Navbar con Hamburguesa -->
+    <nav
+      class="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 border-b border-emerald-900"
+    >
       <div
-        class="max-w-3xl mx-auto space-y-12 relative before:absolute before:left-6 before:top-0 before:h-full before:w-0.5 before:bg-emerald-900">
-        <div class="flex gap-8 relative">
-          <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-black font-bold">2020
-          </div>
-          <div>
-            <h3 class="text-xl font-semibold">OPERARIO – SECCIÓN SANDALIAS</h3>
-            <p class="text-emerald-400">LA VARESINA S.A.C. (RUC 20100170095)Lima</p>
-            <p class="text-emerald-400">Julio 2020 – Marzo 2026</p>
-            <p class="text-zinc-400">
-              <li>Realización de tareas de producción en la sección de sandalias.</li>
-              <li> Me destaqué por mi honradez, voluntad y disciplina durante todo el periodo.</li>
-              <li>Me retiré voluntariamente.</li>
-            </p>
+        class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center"
+      >
+        <h1 class="text-2xl font-bold text-emerald-400">Portafolio</h1>
 
-          </div>
-        </div>
-        <div class="flex gap-8 relative">
-          <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-black font-bold">2017
-          </div>
-          <div>
-            <h3 class="text-xl font-semibold">OPERARIO – SECCIÓN SANDALIAS</h3>
-            <p class="text-emerald-400">LA VARESINA S.A.C. (RUC 20100170095)Lima</p>
-            <p class="text-emerald-400">Febrero 2017 – Abril 2020</p>
-            <p class="text-zinc-400">
-              <li> Desempeñé el cargo de Operario en la sección Plantas P.U</li>
-              <li> Demostré honradez, voluntad y disciplina en el cumplimiento de mis funciones.</li>
-            </p>
-          </div>
-        </div>
-        <div class="flex gap-8 relative">
-          <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-black font-bold">2015
-          </div>
-          <div>
-            <h3 class="text-xl font-semibold">AGENTE DE VIGILANCIA PARTICULAR</h3>
-            <p class="text-emerald-400">GRUPO VICMER SECURITY SAC (RUC 20511424896) La Victoria, Lima </p>
-            <p class="text-emerald-400">Septiembre 2015 – Enero 2017</p>
-            <p class="text-zinc-400">
-              <li> Cumplí funciones de Agente de Vigilancia Particular.</li>
-              <li> Me destaqué por el cumplimiento responsable de las tareas asignadas.</li>
-            </p>
-          </div>
-        </div>
-        <div class="flex gap-8 relative">
-          <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-black font-bold">2013
-          </div>
-          <div>
-            <h3 class="text-xl font-semibold">AGENTE DE SEGURIDAD</h3>
-            <p class="text-emerald-400">LIDER SECURITY S.A.C. (RUC 20393143470) Chorrillos, Lima</p>
-            <p class="text-emerald-400">Febrero 2013 – Septiembre 2015</p>
-            <p class="text-zinc-400">
-              <li> Desempeñé el cargo de Agente de Seguridad.</li>
-              <li> Demostré puntualidad y responsabilidad en todas las funciones encomendadas</li>
-            </p>
-          </div>
-        </div>
-        <div class="flex gap-8 relative">
-          <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-black font-bold">2012
-          </div>
-          <div>
-            <h3 class="text-xl font-semibold"> OPERARIO</h3>
-            <p class="text-emerald-400"> INDUSTRIAS TEAL S.A. (RUC 20100046831)Lima, Perú </p>
-            <p class="text-emerald-400">Junio 2012 – Diciembre 2012</p>
-            <p class="text-zinc-400">
-              <li>Trabajé como Operario en la línea de producción.</li>
-            </p>
-          </div>
-        </div>
-        <div class="flex gap-8 relative">
-          <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-black font-bold">2010
-          </div>
-          <div>
-            <h3 class="text-xl font-semibold"> MANUAL – ÁREA DE TEJEDURÍA PUNTO</h3>
-            <p class="text-emerald-400">SURETEX S.A.C. (RUC 20502470745) Santa Anita, Lima</p>
-            <p class="text-emerald-400"> Diciembre 2010 – Enero 2012</p>
-            <p class="text-zinc-400">
-              <li> Desempeñé funciones de Manual en el área de Tejeduría Punto.</li>
-              <li> Demostré eficiencia, responsabilidad y puntualidad en mi trabajo.</li>
-              <li>Apoyo en Digitacion</li>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-<!-- HERRAMIENTAS Y TECNOLOGÍAS -->  
- <section id="herramientas" class="py-20 overflow-hidden bg-gradient-to-b from-black via-zinc-900 to-black">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-4xl font-bold text-center mb-12 green-glow">
-      Herramientas y Tecnologías
-    </h2>
-    <div class="marquee-container">
-      <div id="tools-marquee" class="marquee-track"></div>
-    </div>
-  </div>
-</section>
-  <!-- COMENTARIOS -->
-<section id="contacto" class="py-20 bg-zinc-950">
-  <h2 class="text-4xl font-bold text-center mb-16 green-glow">Lo que dicen de mí </h2>
-  <div class="relative max-w-7xl mx-auto px-6">
-    <!-- Flecha Izquierda -->
-    <button id="prevBtn"
-      class="absolute left-0 top-1/2 -translate-y-1/2 z-20
-      w-12 h-12 rounded-full bg-zinc-800 hover:bg-emerald-500
-      transition duration-300 shadow-lg">
-      <i class="fas fa-chevron-left text-white"></i>
-    </button>
-    <!-- Contenedor Carrusel -->
-    <div class="overflow-hidden">
-      <div id="testimonialTrack"
-        class="flex gap-8 transition-transform duration-700 ease-in-out">
-        <!-- Testimonio 1 -->
-        <div class="testimonial-card flex-shrink-0 w-full md:w-[31%]">
-          <img src="/img-testimonios/jenifer.jpg" class="w-24 h-24 rounded-full object-cover mx-auto border-4 border-emerald-500">
-          <h4 class="text-xl font-bold mt-5 text-center">Jennifer Ramos</h4>          
-          <p class="text-emerald-400 text-center text-sm mb-4">Companero </p>
-          <p class="text-zinc-300 text-center">
-           Destaca por su innovación, responsabilidad y compromiso con el desarrollo tecnológico..
-          </p>
-        </div>
-        <!-- Testimonio 2 -->
-        <div class="testimonial-card flex-shrink-0 w-full md:w-[31%]">
-          <img src="/img-testimonios/rafaele.jpg" class="w-24 h-24 rounded-full object-cover mx-auto border-4 border-emerald-500">
-          <h4 class="text-xl font-bold mt-5 text-center"> Rafael Morales</h4>
-          <p class="text-emerald-400 text-center text-sm mb-4">Gerente General en Desatec Peru SRL</p>
-          <p class="text-zinc-300 text-center">Profesional responsable, confiable y con gran capacidad de trabajo en equipo.</p>
-        </div>
-        <!-- Testimonio 3 -->
-        <div class="testimonial-card flex-shrink-0 w-full md:w-[31%]">
-          <img src="/img-testimonios/hombre.png" class="w-24 h-24 rounded-full object-cover mx-auto border-4 border-emerald-500">
-          <h4 class="text-xl font-bold mt-5 text-center"> Juan Diego Imán Juárez</h4>
-          <p class="text-emerald-400 text-center text-sm mb-4">Profesional En Redes y Telecomunicaciones</p>
-          <p class="text-zinc-300 text-center">Perseverante, aplicado y siempre dispuesto a asumir nuevos desafíos</p>
-        </div>
-        <!-- Testimonio 4 -->
-        <div class="testimonial-card flex-shrink-0 w-full md:w-[31%]">
-          <img src="/img-testimonios/andy.jpg" class="w-24 h-24 rounded-full object-cover mx-auto border-4 border-emerald-500">
-          <h4 class="text-xl font-bold mt-5 text-center">Andy Jheison Ordoñez Chapa</h4>
-          <p class="text-emerald-400 text-center text-sm mb-4">Profesional en Desarrollo de Software sistema informático</p>
-          <p class="text-zinc-300 text-center">Comprometido con su crecimiento profesional y con una actitud ejemplar en cada proyecto</p>
-        </div>
-        <!-- Testimonio 5 -->
-        <div class="testimonial-card flex-shrink-0 w-full md:w-[31%]">
-          <img src="/img-testimonios/lis.jpg" class="w-24 h-24 rounded-full object-cover mx-auto border-4 border-emerald-500">
-          <h4 class="text-xl font-bold mt-5 text-center"> Pamela Lizeth Samaniego Quesada</h4>
-          <p class="text-emerald-400 text-center text-sm mb-4">Administración de Banca y Finanzas</p>
-          <p class="text-zinc-300 text-center">Destaco como lider y su profesionalismo, orientación al cliente y compromiso con su desarrollo personal</p>
-        </div>
-        <!-- Testimonio 6 -->
-        <div class="testimonial-card flex-shrink-0 w-full md:w-[31%]">
-          <img src="/img-testimonios/edu.jpg" class="w-24 h-24 rounded-full object-cover mx-auto border-4 border-emerald-500">
-          <h4 class="text-xl font-bold mt-5 text-center">Robert Edu Carlos Pacheco</h4>
-          <p class="text-emerald-400 text-center text-sm mb-4">Profesional del área tecnológica</p>
-          <p class="text-zinc-300 text-center">Destaca por su excelente dominio técnico, capacidad de análisis y actitud proactiva ante los desafíos.</p>
-        </div>
-        <!-- Testimonio 7 -->
-        <div class="testimonial-card flex-shrink-0 w-full md:w-[31%]">
-          <img src="/img-testimonios/fran.jpg" class="w-24 h-24 rounded-full object-cover mx-auto border-4 border-emerald-500">
-          <h4 class="text-xl font-bold mt-5 text-center">Franklin Cieza Romero</h4>
-          <p class="text-emerald-400 text-center text-sm mb-4">Compañero de equipo</p>
-          <p class="text-zinc-300 text-center">Sobresale por su compromiso, responsabilidad y constante búsqueda de soluciones efectivas</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Flecha Derecha -->
-    <button id="nextBtn"
-      class="absolute right-0 top-1/2 -translate-y-1/2 z-20
-      w-12 h-12 rounded-full bg-zinc-800 hover:bg-emerald-500
-      transition duration-300 shadow-lg"><i class="fas fa-chevron-right text-white"></i>
-    </button>
-  </div>
-  <!-- FORMULARIO -->
-  <div class="max-w-4xl mx-auto px-6 mt-20">
-    <h2 class="text-4xl font-bold text-center mb-8 green-glow">Deja tu Comentario</h2>
-    <p class="text-zinc-400 mb-10">
-      Gracias por visitar mi perfil. Si deseas compartir tu opinión sobre mi experiencia,
-       proyectos o presentación profesional, te invito a dejar un comentario.
-        Tu feedback es muy valioso y me ayudará a seguir mejorando y creciendo profesionalmente.
-    </p>
-    <form action="https://formspree.io/f/xvznovgj" method="POST" class="space-y-6">
-      <div class="grid md:grid-cols-2 gap-6">
-        <input type="text" name="nombre" placeholder="Tu Nombre" required
-          class="bg-zinc-800 border border-zinc-700 rounded-xl px-6 py-4 focus:outline-none focus:border-emerald-500">
-        <input type="email" name="email" placeholder="Tu Correo Electrónico" required
-          class="bg-zinc-800 border border-zinc-700 rounded-xl px-6 py-4 focus:outline-none focus:border-emerald-500">
-      </div>
-        <input type="text" name="cargo" placeholder="Tu Cargo o Posición"
-        class="w-full bg-zinc-800 border border-zinc-700 rounded-xl px-6 py-4 focus:outline-none focus:border-emerald-500">
-        <textarea name="mensaje" rows="6" placeholder="Escribe tu mensaje aquí..." required
-        class="w-full bg-zinc-800 border border-zinc-700 rounded-xl px-6 py-4 focus:outline-none focus:border-emerald-500"></textarea>
-        <button type="submit"
-        class="w-full bg-emerald-500 hover:bg-emerald-600 py-4 rounded-2xl font-medium transition text-lg">Enviar Comentario
+        <!-- Botón Hamburguesa -->
+        <button id="menu-btn" class="md:hidden text-3xl text-white">
+          <i class="fas fa-bars"></i>
         </button>
-    </form>
-  </div>
-</section>
-  <!-- FOOTER -->
-  <footer class="bg-black py-16 border-t border-zinc-800">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-        <div>
-          <p class="text-emerald-400 text-xl font-bold">Ermenigildo Orbezo</p>
-          <p class="text-zinc-500">Desarrollador Java MVC</p>
-        </div>
-        <div class="flex gap-6 text-2xl">
-          <a href="https://www.linkedin.com/in/ermenigildo-orbezo-martinez" class="hover:text-emerald-400"><i
-              class="fab fa-linkedin"></i></a>
-          <a href="https://github.com/eorbezom" class="hover:text-emerald-400"><i class="fab fa-github"></i></a>
-          <a href="https://wa.me/51919750692?text=Hola%2C%20hemos%20visto%20tu%20CV%20y%20estamos%20interesados%20en%20una%20reuni%C3%B3n%20de%20entrevista%20contigo."
-            class="hover:text-emerald-400"><i class="fab fa-whatsapp"></i></a>
-        </div>
-        <div class="text-sm text-zinc-500 text-center md:text-right">
-          © 2026 Ermenigildo Orbezo • Todos los derechos reservados<br>
-          <a href="#" id="openTerms" class="hover:text-emerald-400">Términos y Condiciones</a>
+        <!-- Menú Desktop -->
+        <div class="hidden md:flex gap-8">
+          <a href="#proyectos" class="hover:text-emerald-400 transition"
+            >Proyectos</a
+          >
+          <a href="#herramientas" class="hover:text-emerald-400 transition"
+            >Herramientas</a
+          >
+          <a href="#experiencia" class="hover:text-emerald-400 transition"
+            >Experiencia</a
+          >
+          <a href="#educacion" class="hover:text-emerald-400 transition"
+            >Educación</a
+          >
+          <a href="#contacto" class="hover:text-emerald-400 transition"
+            >Comentarios</a
+          >
         </div>
       </div>
-    </div>
-  </footer>
-  <!-- MODAL TÉRMINOS Y CONDICIONES -->
+      <!-- Menú Mobile -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-zinc-950 border-t border-zinc-800 px-6 py-6"
+      >
+        <div class="flex flex-col gap-5 text-lg">
+          <a href="#proyectos" class="hover:text-emerald-400 transition"
+            >Proyectos</a
+          >
+          <a href="#herramientas" class="hover:text-emerald-400 transition"
+            >Herramientas</a
+          >
+          <a href="#experiencia" class="hover:text-emerald-400 transition"
+            >Experiencia</a
+          >
+          <a href="#educacion" class="hover:text-emerald-400 transition"
+            >Educación</a
+          >
+          <a href="#contacto" class="hover:text-emerald-400 transition"
+            >Comentarios</a
+          >
+        </div>
+      </div>
+    </nav>
 
-<div id="termsModal"
-     class="fixed inset-0 bg-black/80 z-[9999] hidden items-center justify-center p-6">
+    <!-- HERO  -->
+    <section
+      class="relative min-h-screen flex items-center pt-20 overflow-hidden fondo-hero"
+    >
+      <div class="absolute inset-0 bg-black/90"></div>
+      <div class="max-w-7xl mx-auto px-6 relative z-10 h-screen">
+        <div class="grid md:grid-cols-2 items-center h-full">
+          <div class="space-y-6">
+            <h2 class="text-emerald-400 text-lg font-medium">¡Hola! Soy</h2>
+            <h1 class="text-6xl md:text-7xl font-bold leading-tight green-glow">
+              Ermenigildo Orbezo
+            </h1>
+            <p class="text-3xl text-emerald-300">
+              Tecnico Diseño y Desarrollo de Software
+            </p>
 
-    <div class="bg-zinc-900 max-w-4xl w-full rounded-3xl border border-zinc-700 shadow-2xl">
+            <p class="text-lg text-zinc-300 max-w-md">
+              Apasionado por el desarrollo de software con Java y arquitectura
+              MVC. Me motiva crear aplicaciones robustas y escalables, Me gusta
+              liderar equipos y estoy en constante aprendizaje de nuevas
+              tecnologías para convertir ideas en soluciones reales.
+            </p>
+            <div class="flex flex-wrap gap-6 text-sm">
+              <a
+                href="tel:+51919750692"
+                class="flex items-center gap-2 hover:text-emerald-400 transition"
+              >
+                <i class="fas fa-phone"></i> +51 919 750 692
+              </a>
+              <a
+                href="mailto:ermenigildo.orbezo@gmail.com"
+                class="flex items-center gap-2 hover:text-emerald-400 transition"
+              >
+                <i class="fas fa-envelope"></i> eorbezo99@gmail.com
+              </a>
+              <div class="flex items-center gap-2">
+                <i class="fas fa-map-marker-alt"></i> Lima, Perú
+              </div>
+            </div>
+            <div class="flex gap-4 pt-6">
+              <a
+                href="/doc/CV-Ermenigildo-Orbezo-Martinez.pdf"
+                download
+                class="bg-emerald-500 hover:bg-emerald-600 px-8 py-4 rounded-xl font-medium transition text-2xl flex items-center gap-2"
+              >
+                Descargar CV
+              </a>
+              <a
+                href="https://wa.me/51919750692?text=Hola%2C%20hemos%20visto%20tu%20CV%20y%20estamos%20interesados%20en%20una%20reuni%C3%B3n%20de%20entrevista%20contigo."
+                target="_blank"
+                class="flex items-center gap-2 border border-emerald-500 hover:bg-emerald-500/10 px-8 py-4 rounded-xl font-medium transition"
+                ><i class="fab fa-whatsapp text-2xl"></i>Contáctame</a
+              >
+            </div>
+          </div>
 
+          <!-- IMAGEN  -->
+          <div class="hidden md:flex items-center justify-end h-full">
+            <img
+              src="/img/123.jpg"
+              alt="Ermenigildo Orbezo"
+              class="w-[520px] h-[520px] object-cover border-8 border-emerald-500 rounded-full shadow-2xl drop-shadow-[0_0_40px_rgba(16,185,129,0.7)] drop-shadow-[0_35px_60px_rgba(0,0,0,0.9)] brightness-110"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== PROYECTOS ====================== -->
+    <section
+      id="proyectos"
+      class="py-20 overflow-hidden bg-gradient-to-b from-black via-zinc-900 to-black"
+    >
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 green-glow">
+          Proyectos Destacados
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Proyecto 1 -->
+          <div
+            class="bg-zinc-800 rounded-3xl overflow-hidden hover:scale-105 transition-all group"
+          >
+            <img
+              src="/img/lavadora.png"
+              alt="Proyecto 1"
+              class="w-full h-56 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Lavaplus</h3>
+              <p class="text-zinc-400 text-sm line-clamp-3">
+                Sistema web para gestionar órdenes, clientes y facturación de
+                una lavandería. Desarrollado con Html css MongoDB.
+              </p>
+              <a
+                href="https://lavapluz-d947a.web.app/"
+                target="_blank"
+                class="mt-4 inline-block text-emerald-400 text-sm font-medium hover:text-emerald-300 transition"
+              >
+                Ver Proyecto →</a
+              >
+            </div>
+          </div>
+
+          <!-- Proyecto 2 -->
+          <div
+            class="bg-zinc-800 rounded-3xl overflow-hidden hover:scale-105 transition-all group"
+          >
+            <img
+              src="/img/tienda.png"
+              alt="Proyecto 2"
+              class="w-full h-52 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Coquette Grirls</h3>
+              <p class="text-zinc-400 text-sm line-clamp-3">
+                Tienda online de ropa femenina con carrito de compras y panel
+                administrativo. Desarrollado con Html, css y JavaScript.
+              </p>
+              <a
+                href="https://coquette-girls.web.app/"
+                target="_blank"
+                class="mt-4 inline-block text-emerald-400 text-sm font-medium hover:text-emerald-300 transition"
+              >
+                Ver Proyecto →</a
+              >
+            </div>
+          </div>
+
+          <!-- Proyecto 3 -->
+          <div
+            class="bg-zinc-800 rounded-3xl overflow-hidden hover:scale-105 transition-all group"
+          >
+            <img
+              src="/img/biodigestor.jpg"
+              alt="Proyecto 3"
+              class="w-full h-52 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Metanix sac</h3>
+              <p class="text-zinc-400 text-sm line-clamp-3">
+                Página web informativa para Metanix SAC, empresa especializada
+                en biodigestores. Presenta sus productos, beneficios ambientales
+                y soluciones para el tratamiento de residuos orgánicos de manera
+                moderna y profesional
+              </p>
+              <a
+                href="https://metanix-90deb.web.app/index.html"
+                target="_blank"
+                class="mt-4 inline-block text-emerald-400 text-sm font-medium hover:text-emerald-300 transition"
+              >
+                Ver Proyecto →</a
+              >
+            </div>
+          </div>
+          <!-- Proyecto 4 -->
+          <div
+            class="bg-zinc-800 rounded-3xl overflow-hidden hover:scale-105 transition-all group"
+          >
+            <img
+              src="/img/ibi.jpg"
+              alt="Proyecto 4"
+              class="w-full h-52 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Ibillor</h3>
+              <p class="text-zinc-400 text-sm line-clamp-3">
+                Sistema de visualización de datos con gráficos interactivos.
+              </p>
+              <a
+                href="https://ibillor.vercel.app/index.html"
+                target="_blank"
+                class="mt-4 inline-block text-emerald-400 text-sm font-medium hover:text-emerald-300 transition"
+              >
+                Ver Proyecto →</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCACIÓN -->
+    <section
+      id="educacion"
+      class="bg-zinc-1000 educacion-section relative overflow-hidden"
+    >
+      <div class="absolute inset-0 bg-black/95"></div>
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <h2 class="text-4xl font-bold text-center mb-16 green-glow">
+          Formación Académica
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center min-h-[80vh]">
+          <div class="space-y-8 md:text-right">
+            <div>
+              <h3 class="text-2xl font-semibold">
+                Técnico en Diseño y Desarrollo de Software
+              </h3>
+              <p class="text-emerald-400">Instituto Certus — 2023 - 2025</p>
+            </div>
+            <div>
+              <h3 class="text-2xl font-semibold">
+                Educación Secundaria Completa
+              </h3>
+              <p class="text-emerald-400">
+                CEBA Francisco Bolognesi Cervantes — 2019 - 2022
+              </p>
+            </div>
+            <div>
+              <h3 class="text-2xl font-semibold">
+                Programa de Inglés Nivel Intermedio B1 (2025)
+              </h3>
+              <p class="text-emerald-400">
+                Instituto de Educación Superior Privado CERTUS
+              </p>
+            </div>
+            <div>
+              <h3 class="text-2xl font-semibold">
+                CNAV7: Switching, Routing and Wireless Essentials (2024)
+              </h3>
+              <p class="text-emerald-400">Cisco Networking Academy</p>
+            </div>
+            <div>
+              <h3 class="text-2xl font-semibold">Java Fundamentos (2025)</h3>
+              <p class="text-emerald-400">
+                Escuela Peruana de Tecnología IEPTEN S.A.C
+              </p>
+            </div>
+            <div>
+              <h3 class="text-2xl font-semibold">
+                Oratoria, Liderazgo y Motivación (2024)
+              </h3>
+              <p class="text-emerald-400">
+                Centro Cultural Taller de Expresión TEA
+              </p>
+            </div>
+            <div>
+              <h3 class="text-2xl font-semibold">
+                MTPE Administración de Amenazas Cibernéticas (2026)
+              </h3>
+              <p class="text-emerald-400">Cisco Networking Academy</p>
+            </div>
+          </div>
+          <div class="flex justify-center md:justify-end">
+            <img
+              src="/img/foto2.png"
+              alt="Exponiendo Proyecto"
+              class="w-full max-w-[620px] md:max-w-[680px] aspect-square object-cover rounded-3xl border-4 border-emerald-500 shadow-2xl hover:scale-110 transition-transform duration-500 cursor-pointer"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- EXPERIENCIA -->
+    <section id="experiencia" class="py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2
+          class="text-4xl font-bold text-center mb-12 font-bold leading-tight green-glow"
+        >
+          Experiencia Laboral
+        </h2>
+        <div
+          class="max-w-3xl mx-auto space-y-12 relative before:absolute before:left-6 before:top-0 before:h-full before:w-0.5 before:bg-emerald-900"
+        >
+          <div class="flex gap-8 relative">
+            <div
+              class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-black font-bold"
+            >
+              2020
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold">
+                OPERARIO – SECCIÓN SANDALIAS
+              </h3>
+              <p class="text-emerald-400">
+                LA VARESINA S.A.C. (RUC 20100170095)Lima
+              </p>
+              <p class="text-emerald-400">Julio 2020 – Marzo 2026</p>
+              <p class="text-zinc-400">
+                <li>
+                  Realización de tareas de producción en la sección de
+                  sandalias.
+                </li>
+                <li>
+                  Me destaqué por mi honradez, voluntad y disciplina durante
+                  todo el periodo.
+                </li>
+                <li>Me retiré voluntariamente.</li>
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-8 relative">
+            <div
+              class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-black font-bold"
+            >
+              2017
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold">
+                OPERARIO – SECCIÓN SANDALIAS
+              </h3>
+              <p class="text-emerald-400">
+                LA VARESINA S.A.C. (RUC 20100170095)Lima
+              </p>
+              <p class="text-emerald-400">Febrero 2017 – Abril 2020</p>
+              <p class="text-zinc-400">
+                <li>
+                  Desempeñé el cargo de Operario en la sección Plantas P.U
+                </li>
+                <li>
+                  Demostré honradez, voluntad y disciplina en el cumplimiento de
+                  mis funciones.
+                </li>
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-8 relative">
+            <div
+              class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-black font-bold"
+            >
+              2015
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold">
+                AGENTE DE VIGILANCIA PARTICULAR
+              </h3>
+              <p class="text-emerald-400">
+                GRUPO VICMER SECURITY SAC (RUC 20511424896) La Victoria, Lima
+              </p>
+              <p class="text-emerald-400">Septiembre 2015 – Enero 2017</p>
+              <p class="text-zinc-400">
+                <li>Cumplí funciones de Agente de Vigilancia Particular.</li>
+                <li>
+                  Me destaqué por el cumplimiento responsable de las tareas
+                  asignadas.
+                </li>
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-8 relative">
+            <div
+              class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-black font-bold"
+            >
+              2013
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold">AGENTE DE SEGURIDAD</h3>
+              <p class="text-emerald-400">
+                LIDER SECURITY S.A.C. (RUC 20393143470) Chorrillos, Lima
+              </p>
+              <p class="text-emerald-400">Febrero 2013 – Septiembre 2015</p>
+              <p class="text-zinc-400">
+                <li>Desempeñé el cargo de Agente de Seguridad.</li>
+                <li>
+                  Demostré puntualidad y responsabilidad en todas las funciones
+                  encomendadas
+                </li>
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-8 relative">
+            <div
+              class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-black font-bold"
+            >
+              2012
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold">OPERARIO</h3>
+              <p class="text-emerald-400">
+                INDUSTRIAS TEAL S.A. (RUC 20100046831)Lima, Perú
+              </p>
+              <p class="text-emerald-400">Junio 2012 – Diciembre 2012</p>
+              <p class="text-zinc-400">
+                <li>Trabajé como Operario en la línea de producción.</li>
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-8 relative">
+            <div
+              class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-black font-bold"
+            >
+              2010
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold">
+                MANUAL – ÁREA DE TEJEDURÍA PUNTO
+              </h3>
+              <p class="text-emerald-400">
+                SURETEX S.A.C. (RUC 20502470745) Santa Anita, Lima
+              </p>
+              <p class="text-emerald-400">Diciembre 2010 – Enero 2012</p>
+              <p class="text-zinc-400">
+                <li>
+                  Desempeñé funciones de Manual en el área de Tejeduría Punto.
+                </li>
+                <li>
+                  Demostré eficiencia, responsabilidad y puntualidad en mi
+                  trabajo.
+                </li>
+                <li>Apoyo en Digitacion</li>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- HERRAMIENTAS Y TECNOLOGÍAS -->
+    <section
+      id="herramientas"
+      class="py-20 overflow-hidden bg-gradient-to-b from-black via-zinc-900 to-black"
+    >
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 green-glow">
+          Herramientas y Tecnologías
+        </h2>
+        <div class="marquee-container">
+          <div id="tools-marquee" class="marquee-track"></div>
+        </div>
+      </div>
+    </section>
+    <!-- COMENTARIOS -->
+    <section id="contacto" class="py-20 bg-zinc-950">
+      <h2 class="text-4xl font-bold text-center mb-16 green-glow">
+        Lo que dicen de mí
+      </h2>
+      <div class="relative max-w-7xl mx-auto px-6">
+        <!-- Flecha Izquierda -->
+        <button
+          id="prevBtn"
+          class="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-zinc-800 hover:bg-emerald-500 transition duration-300 shadow-lg"
+        >
+          <i class="fas fa-chevron-left text-white"></i>
+        </button>
+        <!-- Contenedor Carrusel -->
+        <div class="overflow-hidden">
+          <div
+            id="testimonialTrack"
+            class="flex gap-8 transition-transform duration-700 ease-in-out"
+          >
+            <!-- Testimonio 1 -->
+            <div class="testimonial-card flex-shrink-0 w-full md:w-[31%]">
+              <img
+                src="/img-testimonios/jenifer.jpg"
+                class="w-24 h-24 rounded-full object-cover mx-auto border-4 border-emerald-500"
+              />
+              <h4 class="text-xl font-bold mt-5 text-center">Jennifer Ramos</h4>
+              <p class="text-emerald-400 text-center text-sm mb-4">Companero</p>
+              <p class="text-zinc-300 text-center">
+                Destaca por su innovación, responsabilidad y compromiso con el
+                desarrollo tecnológico..
+              </p>
+            </div>
+            <!-- Testimonio 2 -->
+            <div class="testimonial-card flex-shrink-0 w-full md:w-[31%]">
+              <img
+                src="/img-testimonios/rafaele.jpg"
+                class="w-24 h-24 rounded-full object-cover mx-auto border-4 border-emerald-500"
+              />
+              <h4 class="text-xl font-bold mt-5 text-center">Rafael Morales</h4>
+              <p class="text-emerald-400 text-center text-sm mb-4">
+                Gerente General en Desatec Peru SRL
+              </p>
+              <p class="text-zinc-300 text-center">
+                Profesional responsable, confiable y con gran capacidad de
+                trabajo en equipo.
+              </p>
+            </div>
+            <!-- Testimonio 3 -->
+            <div class="testimonial-card flex-shrink-0 w-full md:w-[31%]">
+              <img
+                src="/img-testimonios/hombre.png"
+                class="w-24 h-24 rounded-full object-cover mx-auto border-4 border-emerald-500"
+              />
+              <h4 class="text-xl font-bold mt-5 text-center">
+                Juan Diego Imán Juárez
+              </h4>
+              <p class="text-emerald-400 text-center text-sm mb-4">
+                Profesional En Redes y Telecomunicaciones
+              </p>
+              <p class="text-zinc-300 text-center">
+                Perseverante, aplicado y siempre dispuesto a asumir nuevos
+                desafíos
+              </p>
+            </div>
+            <!-- Testimonio 4 -->
+            <div class="testimonial-card flex-shrink-0 w-full md:w-[31%]">
+              <img
+                src="/img-testimonios/andy.jpg"
+                class="w-24 h-24 rounded-full object-cover mx-auto border-4 border-emerald-500"
+              />
+              <h4 class="text-xl font-bold mt-5 text-center">
+                Andy Jheison Ordoñez Chapa
+              </h4>
+              <p class="text-emerald-400 text-center text-sm mb-4">
+                Profesional en Desarrollo de Software sistema informático
+              </p>
+              <p class="text-zinc-300 text-center">
+                Comprometido con su crecimiento profesional y con una actitud
+                ejemplar en cada proyecto
+              </p>
+            </div>
+            <!-- Testimonio 5 -->
+            <div class="testimonial-card flex-shrink-0 w-full md:w-[31%]">
+              <img
+                src="/img-testimonios/lis.jpg"
+                class="w-24 h-24 rounded-full object-cover mx-auto border-4 border-emerald-500"
+              />
+              <h4 class="text-xl font-bold mt-5 text-center">
+                Pamela Lizeth Samaniego Quesada
+              </h4>
+              <p class="text-emerald-400 text-center text-sm mb-4">
+                Administración de Banca y Finanzas
+              </p>
+              <p class="text-zinc-300 text-center">
+                Destaco como lider y su profesionalismo, orientación al cliente
+                y compromiso con su desarrollo personal
+              </p>
+            </div>
+            <!-- Testimonio 6 -->
+            <div class="testimonial-card flex-shrink-0 w-full md:w-[31%]">
+              <img
+                src="/img-testimonios/edu.jpg"
+                class="w-24 h-24 rounded-full object-cover mx-auto border-4 border-emerald-500"
+              />
+              <h4 class="text-xl font-bold mt-5 text-center">
+                Robert Edu Carlos Pacheco
+              </h4>
+              <p class="text-emerald-400 text-center text-sm mb-4">
+                Profesional del área tecnológica
+              </p>
+              <p class="text-zinc-300 text-center">
+                Destaca por su excelente dominio técnico, capacidad de análisis
+                y actitud proactiva ante los desafíos.
+              </p>
+            </div>
+            <!-- Testimonio 7 -->
+            <div class="testimonial-card flex-shrink-0 w-full md:w-[31%]">
+              <img
+                src="/img-testimonios/fran.jpg"
+                class="w-24 h-24 rounded-full object-cover mx-auto border-4 border-emerald-500"
+              />
+              <h4 class="text-xl font-bold mt-5 text-center">
+                Franklin Cieza Romero
+              </h4>
+              <p class="text-emerald-400 text-center text-sm mb-4">
+                Compañero de equipo
+              </p>
+              <p class="text-zinc-300 text-center">
+                Sobresale por su compromiso, responsabilidad y constante
+                búsqueda de soluciones efectivas
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flecha Derecha -->
+        <button
+          id="nextBtn"
+          class="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-zinc-800 hover:bg-emerald-500 transition duration-300 shadow-lg"
+        >
+          <i class="fas fa-chevron-right text-white"></i>
+        </button>
+      </div>
+      <!-- FORMULARIO -->
+      <div class="max-w-4xl mx-auto px-6 mt-20">
+        <h2 class="text-4xl font-bold text-center mb-8 green-glow">
+          Deja tu Comentario
+        </h2>
+        <p class="text-zinc-400 mb-10">
+          Gracias por visitar mi perfil. Si deseas compartir tu opinión sobre mi
+          experiencia, proyectos o presentación profesional, te invito a dejar
+          un comentario. Tu feedback es muy valioso y me ayudará a seguir
+          mejorando y creciendo profesionalmente.
+        </p>
+        <form
+          action="https://formspree.io/f/xvznovgj"
+          method="POST"
+          class="space-y-6"
+        >
+          <div class="grid md:grid-cols-2 gap-6">
+            <input
+              type="text"
+              name="nombre"
+              placeholder="Tu Nombre"
+              required
+              class="bg-zinc-800 border border-zinc-700 rounded-xl px-6 py-4 focus:outline-none focus:border-emerald-500"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Tu Correo Electrónico"
+              required
+              class="bg-zinc-800 border border-zinc-700 rounded-xl px-6 py-4 focus:outline-none focus:border-emerald-500"
+            />
+          </div>
+          <input
+            type="text"
+            name="cargo"
+            placeholder="Tu Cargo o Posición"
+            class="w-full bg-zinc-800 border border-zinc-700 rounded-xl px-6 py-4 focus:outline-none focus:border-emerald-500"
+          />
+          <textarea
+            name="mensaje"
+            rows="6"
+            placeholder="Escribe tu mensaje aquí..."
+            required
+            class="w-full bg-zinc-800 border border-zinc-700 rounded-xl px-6 py-4 focus:outline-none focus:border-emerald-500"
+          ></textarea>
+          <button
+            type="submit"
+            class="w-full bg-emerald-500 hover:bg-emerald-600 py-4 rounded-2xl font-medium transition text-lg"
+          >
+            Enviar Comentario
+          </button>
+        </form>
+      </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="bg-black py-16 border-t border-zinc-800">
+      <div class="max-w-6xl mx-auto px-6">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-8"
+        >
+          <div>
+            <p class="text-emerald-400 text-xl font-bold">Ermenigildo Orbezo</p>
+            <p class="text-zinc-500">Desarrollador Java MVC</p>
+          </div>
+          <div class="flex gap-6 text-2xl">
+            <a
+              href="https://www.linkedin.com/in/ermenigildo-orbezo-martinez"
+              class="hover:text-emerald-400"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a href="https://github.com/eorbezom" class="hover:text-emerald-400"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              href="https://wa.me/51919750692?text=Hola%2C%20hemos%20visto%20tu%20CV%20y%20estamos%20interesados%20en%20una%20reuni%C3%B3n%20de%20entrevista%20contigo."
+              class="hover:text-emerald-400"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+          <div class="text-sm text-zinc-500 text-center md:text-right">
+            © 2026 Ermenigildo Orbezo • Todos los derechos reservados<br />
+            <a href="#" id="openTerms" class="hover:text-emerald-400"
+              >Términos y Condiciones</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- MODAL TÉRMINOS Y CONDICIONES -->
+
+    <div
+      id="termsModal"
+      class="fixed inset-0 bg-black/80 z-[9999] hidden items-center justify-center p-6"
+    >
+      <div
+        class="bg-zinc-900 max-w-4xl w-full rounded-3xl border border-zinc-700 shadow-2xl"
+      >
         <!-- CABECERA -->
-        <div class="flex justify-between items-center p-6 border-b border-zinc-700">
+        <div
+          class="flex justify-between items-center p-6 border-b border-zinc-700"
+        >
+          <h2 class="text-2xl font-bold text-center text-emerald-400">
+            Términos y Condiciones
+          </h2>
 
-            <h2 class="text-2xl font-bold text-center text-emerald-400">
-                Términos y Condiciones
-            </h2>
-
-            <button id="closeTerms"
-                class="text-2xl hover:text-red-500">
-                ✕
-            </button>
-
+          <button id="closeTerms" class="text-2xl hover:text-red-500">✕</button>
         </div>
 
         <!-- CONTENIDO -->
         <div class="p-8 max-h-[70vh] overflow-y-auto text-zinc-300 space-y-6">
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">
+              1. Finalidad del sitio
+            </h3>
+            <p>
+              Este portafolio profesional tiene como finalidad presentar la
+              experiencia, formación académica, proyectos y habilidades de
+              Ermenigildo Orbezo para fines laborales, académicos y de
+              evaluación profesional.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">
+              2. Uso autorizado de la información
+            </h3>
+            <p>
+              Los datos publicados en este sitio podrán ser utilizados
+              únicamente para procesos de selección, entrevistas laborales,
+              evaluación académica, oportunidades de colaboración profesional o
+              fines relacionados con el desarrollo de software.
+            </p>
+          </div>
 
-            <div>
-                <h3 class="text-xl font-semibold text-white mb-2">1. Finalidad del sitio</h3>
-                <p>
-                    Este portafolio profesional tiene como finalidad presentar la experiencia,
-                    formación académica, proyectos y habilidades de Ermenigildo Orbezo para fines
-                    laborales, académicos y de evaluación profesional.
-                </p>
-            </div>
-            <div>
-                <h3 class="text-xl font-semibold text-white mb-2">2. Uso autorizado de la información</h3>
-                <p>
-                    Los datos publicados en este sitio podrán ser utilizados únicamente para
-                    procesos de selección, entrevistas laborales, evaluación académica,
-                    oportunidades de colaboración profesional o fines relacionados con el
-                    desarrollo de software.
-                </p>
-            </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">
+              3. Restricciones de uso
+            </h3>
+            <p>
+              No se autoriza la reproducción, comercialización, distribución
+              masiva, suplantación de identidad, uso publicitario o utilización
+              de la información contenida en este sitio para fines distintos a
+              los expresamente indicados.
+            </p>
+          </div>
 
-            <div>
-                <h3 class="text-xl font-semibold text-white mb-2">
-                    3. Restricciones de uso
-                </h3>
-                <p>
-                    No se autoriza la reproducción, comercialización, distribución masiva,
-                    suplantación de identidad, uso publicitario o utilización de la información
-                    contenida en este sitio para fines distintos a los expresamente indicados.
-                </p>
-            </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">
+              4. Comentarios y testimonios
+            </h3>
+            <p>
+              Al enviar un comentario mediante el formulario de este sitio, el
+              usuario autoriza la publicación de dicho comentario dentro del
+              portafolio profesional con fines de referencia profesional y
+              validación de experiencia.
+            </p>
+          </div>
 
-            <div>
-                <h3 class="text-xl font-semibold text-white mb-2">
-                    4. Comentarios y testimonios
-                </h3>
-                <p>
-                    Al enviar un comentario mediante el formulario de este sitio, el usuario
-                    autoriza la publicación de dicho comentario dentro del portafolio profesional
-                    con fines de referencia profesional y validación de experiencia.
-                </p>
-            </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">
+              5. Protección de datos
+            </h3>
+            <p>
+              Los datos proporcionados por los usuarios serán utilizados
+              únicamente para identificar al autor del comentario y gestionar
+              los testimonios mostrados en este sitio.
+            </p>
+          </div>
 
-            <div>
-                <h3 class="text-xl font-semibold text-white mb-2">
-                    5. Protección de datos
-                </h3>
-                <p>
-                    Los datos proporcionados por los usuarios serán utilizados únicamente para
-                    identificar al autor del comentario y gestionar los testimonios mostrados en
-                    este sitio.
-                </p>
-            </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">6. Privacidad</h3>
+            <p>
+              La información proporcionada por los usuarios no será vendida,
+              cedida ni compartida con terceros para fines comerciales o ajenos
+              a este portafolio.
+            </p>
+          </div>
 
-            <div>
-                <h3 class="text-xl font-semibold text-white mb-2">
-                    6. Privacidad
-                </h3>
-                <p>
-                    La información proporcionada por los usuarios no será vendida, cedida ni
-                    compartida con terceros para fines comerciales o ajenos a este portafolio.
-                </p>
-            </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">
+              7. Propiedad intelectual
+            </h3>
+            <p>
+              Los proyectos, diseños, imágenes, textos y demás contenidos
+              mostrados en este sitio pertenecen a sus respectivos autores y se
+              encuentran protegidos por la legislación aplicable.
+            </p>
+          </div>
 
-            <div>
-                <h3 class="text-xl font-semibold text-white mb-2">
-                    7. Propiedad intelectual
-                </h3>
-                <p>
-                    Los proyectos, diseños, imágenes, textos y demás contenidos mostrados en este
-                    sitio pertenecen a sus respectivos autores y se encuentran protegidos por la
-                    legislación aplicable.
-                </p>
-            </div>
-
-            <div>
-                <h3 class="text-xl font-semibold text-white mb-2">
-                    8. Contacto
-                </h3>
-                <p>
-                    Para consultas relacionadas con estos términos y condiciones puede utilizar
-                    los medios de contacto indicados en este portafolio.
-                </p>
-            </div>
-            <div>
-                <h3 class="text-xl font-semibold text-white mb-2">
-                    9. Exactitud de la información
-                </h3>
-                <p>
-                    Aunque se procura mantener la información actualizada, algunos datos pueden cambiar con el tiempo debido a nuevas experiencias laborales, proyectos o certificaciones.
-                </p>
-            </div>
-            <div>
-                <h3 class="text-xl font-semibold text-white mb-2">
-                    10. Uso de datos de contacto
-                </h3>
-                <p>
-                   Los datos de contacto publicados en este sitio tienen como finalidad facilitar 
-                   la comunicación profesional, académica o de colaboración..
-                </p>
-            </div>
-            <div>
-                <h3 class="text-xl font-semibold text-white mb-2">
-                    11. Prohibición de spam
-                </h3>
-                <p>
-                    No se autoriza el uso de los datos de contacto para el envío de publicidad masiva, 
-                    spam, cadenas de mensajes o comunicaciones no solicitadas.
-                </p>
-            </div>
-            <div>
-                <h3 class="text-xl font-semibold text-white mb-2">
-                    12. Prohibición de suplantación
-                </h3>
-                <p>
-                    Queda prohibido utilizar la identidad, nombre,
-                     imagen o información profesional del titular para hacerse pasar por él en cualquier medio físico o digita
-                </p>
-            </div>
-              <div>
-                  <h3 class="text-xl font-semibold text-white mb-2">
-                      13. Uso de proyectos publicados
-                  </h3>
-                  <p>
-                       Los proyectos mostrados tienen fines demostrativos y educativos.
-                        Su publicación no implica la cesión de derechos de autor ni de propiedad intelectual.
-                  </p>
-
-              </div>
-              <div>
-                <h3 class="text-xl font-semibold text-white mb-2">
-                    14. Enlaces externos
-                </h3>
-                <p>
-                    Este sitio puede contener enlaces a plataformas externas como GitHub, LinkedIn, Vercel, Watsapp, 
-                    Firebase u otras. El titular no es responsable del contenido o políticas de dichos sitios.
-                </p>
-            </div>
-            <div>
-                <h3 class="text-xl font-semibold text-white mb-2">
-                    15. Disponibilidad del sitio
-                </h3>
-                <p>
-                    El titular no garantiza la disponibilidad permanente del sitio web y podrá realizar modificaciones,
-                     mantenimientos o actualizaciones cuando lo considere necesario.
-                </p>
-            </div>
-            <div>
-                <h3 class="text-xl font-semibold text-white mb-2">
-                    16. Comentarios inapropiados
-                </h3>
-                <p>
-                    No se publicarán comentarios que contengan lenguaje ofensivo, discriminatorio, 
-                    difamatorio, amenazante o contrario a la legislación aplicable.
-                </p>
-            </div>
-            <div>
-                <h3 class="text-xl font-semibold text-white mb-2">
-                    17. Veracidad de los testimonios
-                </h3>
-                <p>
-                    Los usuarios que envíen comentarios o testimonios declaran que la
-                     información proporcionada es veraz y corresponde a una opinión genuina.
-                </p>
-            </div>
-            <div>
-                <h3 class="text-xl font-semibold text-white mb-2">
-                    18. Eliminación de comentarios
-                </h3>
-                <p>
-                    El titular se reserva el derecho de editar, ocultar o eliminar comentarios que resulten 
-                    inapropiados o que no guarden relación con la finalidad profesional del sitio.
-                </p>
-            </div>
-            <div>
-                <h3 class="text-xl font-semibold text-white mb-2">
-                    19. Actualización de términos
-                </h3>
-                <p>
-                    Estos términos y condiciones podrán ser modificados en cualquier momento sin previo aviso para adaptarse a nuevas necesidades o requisitos legales.
-                </p>
-            </div>
-            <div>
-                <h3 class="text-xl font-semibold text-white mb-2">
-                    20. Legislación aplicable
-                </h3>
-                <p>
-                    El uso de este sitio se regirá por la legislación vigente aplicable en la jurisdicción correspondiente.
-                     Cualquier controversia deberá resolverse conforme a los procedimientos legales establecidos por la normativa aplicable.
-                </p>
-            </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">8. Contacto</h3>
+            <p>
+              Para consultas relacionadas con estos términos y condiciones puede
+              utilizar los medios de contacto indicados en este portafolio.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">
+              9. Exactitud de la información
+            </h3>
+            <p>
+              Aunque se procura mantener la información actualizada, algunos
+              datos pueden cambiar con el tiempo debido a nuevas experiencias
+              laborales, proyectos o certificaciones.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">
+              10. Uso de datos de contacto
+            </h3>
+            <p>
+              Los datos de contacto publicados en este sitio tienen como
+              finalidad facilitar la comunicación profesional, académica o de
+              colaboración..
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">
+              11. Prohibición de spam
+            </h3>
+            <p>
+              No se autoriza el uso de los datos de contacto para el envío de
+              publicidad masiva, spam, cadenas de mensajes o comunicaciones no
+              solicitadas.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">
+              12. Prohibición de suplantación
+            </h3>
+            <p>
+              Queda prohibido utilizar la identidad, nombre, imagen o
+              información profesional del titular para hacerse pasar por él en
+              cualquier medio físico o digita
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">
+              13. Uso de proyectos publicados
+            </h3>
+            <p>
+              Los proyectos mostrados tienen fines demostrativos y educativos.
+              Su publicación no implica la cesión de derechos de autor ni de
+              propiedad intelectual.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">
+              14. Enlaces externos
+            </h3>
+            <p>
+              Este sitio puede contener enlaces a plataformas externas como
+              GitHub, LinkedIn, Vercel, Watsapp, Firebase u otras. El titular no
+              es responsable del contenido o políticas de dichos sitios.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">
+              15. Disponibilidad del sitio
+            </h3>
+            <p>
+              El titular no garantiza la disponibilidad permanente del sitio web
+              y podrá realizar modificaciones, mantenimientos o actualizaciones
+              cuando lo considere necesario.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">
+              16. Comentarios inapropiados
+            </h3>
+            <p>
+              No se publicarán comentarios que contengan lenguaje ofensivo,
+              discriminatorio, difamatorio, amenazante o contrario a la
+              legislación aplicable.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">
+              17. Veracidad de los testimonios
+            </h3>
+            <p>
+              Los usuarios que envíen comentarios o testimonios declaran que la
+              información proporcionada es veraz y corresponde a una opinión
+              genuina.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">
+              18. Eliminación de comentarios
+            </h3>
+            <p>
+              El titular se reserva el derecho de editar, ocultar o eliminar
+              comentarios que resulten inapropiados o que no guarden relación
+              con la finalidad profesional del sitio.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">
+              19. Actualización de términos
+            </h3>
+            <p>
+              Estos términos y condiciones podrán ser modificados en cualquier
+              momento sin previo aviso para adaptarse a nuevas necesidades o
+              requisitos legales.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">
+              20. Legislación aplicable
+            </h3>
+            <p>
+              El uso de este sitio se regirá por la legislación vigente
+              aplicable en la jurisdicción correspondiente. Cualquier
+              controversia deberá resolverse conforme a los procedimientos
+              legales establecidos por la normativa aplicable.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
-  <script src="portfolio.js"></script>
-  <script src="/js/funcion.js"></script>
-</body>
+
+    <script src="/js/funcion.js"></script>
+  </body>
 </html>

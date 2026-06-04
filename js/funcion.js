@@ -1,3 +1,5 @@
+
+// ==================== CARRUSEL HERRAMIENTAS ====================
 const toolsContainer = document.getElementById('tools-marquee');
 
 if (toolsContainer) {
@@ -224,4 +226,21 @@ if(openTerms && closeTerms && termsModal){
         }
     });
 
+}
+
+
+// ==================== MENÚ HAMBURGUESA ====================
+console.log("funcion.js cargado");
+
+const menuBtn = document.getElementById("menu-btn");
+const mobileMenu = document.getElementById("mobile-menu");
+
+console.log(menuBtn);
+console.log(mobileMenu);
+
+if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener("click", () => {
+        console.log("CLICK");
+        mobileMenu.classList.toggle("hidden");
+    });
 }
