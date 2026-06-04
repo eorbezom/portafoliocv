@@ -1,4 +1,8 @@
 
+// ==================== ANALYTICS ====================
+import { inject } from "@vercel/analytics";
+
+inject();
 // ==================== CARRUSEL HERRAMIENTAS ====================
 const toolsContainer = document.getElementById('tools-marquee');
 
