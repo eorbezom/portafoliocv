@@ -107,7 +107,7 @@ if (toolsContainer) {
 
   let pos = 0;
   let paused = false;
-  const speed = 0.6;
+  const speed = 2.8;
 
   toolsContainer.addEventListener("mouseenter", () => paused = true);
   toolsContainer.addEventListener("mouseleave", () => paused = false);
