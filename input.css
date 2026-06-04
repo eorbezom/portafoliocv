@@ -1,0 +1,30 @@
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 24px;
+  animation: marquee 40s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.green-glow {
+  text-shadow: 0 0 15px rgb(16 185 129);
+}
+
+.fondo-hero {
+  background-image: url('./img/fono1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
