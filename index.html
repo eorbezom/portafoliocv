@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,290 +9,471 @@
   <link rel="stylesheet" href="input.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
+
 <body class="bg-zinc-950 text-zinc-100">
 
   <!-- Navbar con Hamburguesa -->
-<nav class="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 border-b border-emerald-900">
-  <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-    <h1 class="text-2xl font-bold text-emerald-400">Portafolio</h1>
-   
-    <!-- Botón Hamburguesa -->
-    <button id="menu-btn" class="md:hidden text-3xl text-white">
-      <i class="fas fa-bars"></i>
-    </button>
-    <!-- Menú Desktop -->
-    <div class="hidden md:flex gap-8">
-      <a href="#proyectos" class="hover:text-emerald-400 transition">Proyectos</a>
-      <a href="#herramientas" class="hover:text-emerald-400 transition">Herramientas</a>
-      <a href="#experiencia" class="hover:text-emerald-400 transition">Experiencia</a>
-      <a href="#educacion" class="hover:text-emerald-400 transition">Educación</a>
-      <a href="#contacto" class="hover:text-emerald-400 transition">Contacto</a>
-    </div>
-  </div>
-  <!-- Menú Mobile -->
-  <div id="mobile-menu" class="hidden md:hidden bg-zinc-950 border-t border-zinc-800 px-6 py-6">
-    <div class="flex flex-col gap-5 text-lg">
-      <a href="#proyectos" class="hover:text-emerald-400 transition">Proyectos</a>
-      <a href="#herramientas" class="hover:text-emerald-400 transition">Herramientas</a>
-      <a href="#experiencia" class="hover:text-emerald-400 transition">Experiencia</a>
-      <a href="#educacion" class="hover:text-emerald-400 transition">Educación</a>
-      <a href="#contacto" class="hover:text-emerald-400 transition">Contacto</a>
-    </div>
-  </div>
-</nav>
+  <nav class="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 border-b border-emerald-900">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-emerald-400">Portafolio</h1>
 
-<!-- HERO FINAL - Imagen Full Vertical -->
-<section class="relative min-h-screen flex items-center pt-20 overflow-hidden fondo-hero">
-  <div class="absolute inset-0 bg-black/90"></div>
-  <div class="max-w-7xl mx-auto px-6 relative z-10 h-screen">
-    <div class="grid md:grid-cols-2 items-center h-full">
-      <!-- TEXTO IZQUIERDO -->
-      <div class="space-y-6">
-        <h2 class="text-emerald-400 text-lg font-medium">¡Hola! Soy</h2>
-        <h1 class="text-6xl md:text-7xl font-bold leading-tight green-glow">Ermenigildo Orbezo</h1>
-        <p class="text-3xl text-emerald-300">Tecnico Desarrollador Java MVC</p>
-       
-        <p class="text-lg text-zinc-300 max-w-md">
-          Apasionado por el desarrollo de software con Java y arquitectura MVC. 
-          Me motiva crear aplicaciones robustas y escalables, Me gusta liderar equipos y estoy en constante aprendizaje 
-          de nuevas tecnologías para convertir ideas en soluciones reales.
-        </p>
-        <div class="flex flex-wrap gap-6 text-sm">
-          <a href="tel:+51919750692" class="flex items-center gap-2 hover:text-emerald-400 transition">
-            <i class="fas fa-phone"></i> +51 919 750 692
-          </a>
-          <a href="mailto:ermenigildo.orbezo@gmail.com" class="flex items-center gap-2 hover:text-emerald-400 transition">
-            <i class="fas fa-envelope"></i> eorbezo99@gmail.com
-          </a>
-          <div class="flex items-center gap-2">
-            <i class="fas fa-map-marker-alt"></i> Lima, Perú
+      <!-- Botón Hamburguesa -->
+      <button id="menu-btn" class="md:hidden text-3xl text-white">
+        <i class="fas fa-bars"></i>
+      </button>
+      <!-- Menú Desktop -->
+      <div class="hidden md:flex gap-8">
+        <a href="#proyectos" class="hover:text-emerald-400 transition">Proyectos</a>
+        <a href="#herramientas" class="hover:text-emerald-400 transition">Herramientas</a>
+        <a href="#experiencia" class="hover:text-emerald-400 transition">Experiencia</a>
+        <a href="#educacion" class="hover:text-emerald-400 transition">Educación</a>
+        <a href="#contacto" class="hover:text-emerald-400 transition">Contacto</a>
+      </div>
+    </div>
+    <!-- Menú Mobile -->
+    <div id="mobile-menu" class="hidden md:hidden bg-zinc-950 border-t border-zinc-800 px-6 py-6">
+      <div class="flex flex-col gap-5 text-lg">
+        <a href="#proyectos" class="hover:text-emerald-400 transition">Proyectos</a>
+        <a href="#herramientas" class="hover:text-emerald-400 transition">Herramientas</a>
+        <a href="#experiencia" class="hover:text-emerald-400 transition">Experiencia</a>
+        <a href="#educacion" class="hover:text-emerald-400 transition">Educación</a>
+        <a href="#contacto" class="hover:text-emerald-400 transition">Contacto</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO  -->
+  <section class="relative min-h-screen flex items-center pt-20 overflow-hidden fondo-hero">
+    <div class="absolute inset-0 bg-black/90"></div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10 h-screen">
+      <div class="grid md:grid-cols-2 items-center h-full">
+
+        <div class="space-y-6">
+          <h2 class="text-emerald-400 text-lg font-medium">¡Hola! Soy</h2>
+          <h1 class="text-6xl md:text-7xl font-bold leading-tight green-glow">Ermenigildo Orbezo</h1>
+          <p class="text-3xl text-emerald-300">Tecnico Diseño y Desarrollo de Software</p>
+
+          <p class="text-lg text-zinc-300 max-w-md">
+            Apasionado por el desarrollo de software con Java y arquitectura MVC.
+            Me motiva crear aplicaciones robustas y escalables, Me gusta liderar equipos y estoy en constante
+            aprendizaje
+            de nuevas tecnologías para convertir ideas en soluciones reales.
+          </p>
+          <div class="flex flex-wrap gap-6 text-sm">
+            <a href="tel:+51919750692" class="flex items-center gap-2 hover:text-emerald-400 transition">
+              <i class="fas fa-phone"></i> +51 919 750 692
+            </a>
+            <a href="mailto:ermenigildo.orbezo@gmail.com"
+              class="flex items-center gap-2 hover:text-emerald-400 transition">
+              <i class="fas fa-envelope"></i> eorbezo99@gmail.com
+            </a>
+            <div class="flex items-center gap-2">
+              <i class="fas fa-map-marker-alt"></i> Lima, Perú
+            </div>
+          </div>
+          <div class="flex gap-4 pt-6">
+            <a href="/doc/CV-Ermenigildo-Orbezo-Martinez.pdf" download
+              class="bg-emerald-500 hover:bg-emerald-600 px-8 py-4 rounded-xl font-medium transition text-2xl flex items-center gap-2">
+              Descargar CV
+            </a>
+            <a href="https://wa.me/51919750692?text=Hola%2C%20hemos%20visto%20tu%20CV%20y%20estamos%20interesados%20en%20una%20reuni%C3%B3n%20de%20entrevista%20contigo."
+              target="_blank" class="flex items-center gap-2 border border-emerald-500 hover:bg-emerald-500/10
+             px-8 py-4 rounded-xl font-medium transition"><i class="fab fa-whatsapp text-2xl"></i>Contáctame</a>
           </div>
         </div>
-        <div class="flex gap-4 pt-6">
-          <a href="/doc/CV-Ermenigildo-Orbezo-Martinez.pdf" download class="bg-emerald-500 hover:bg-emerald-600 px-8 py-4 rounded-xl font-medium transition">
-            Descargar CV
-          </a>
-          <a href="https://wa.me/51919750692?text=Hola%2C%20hemos%20visto%20tu%20CV%20y%20estamos%20interesados%20en%20una%20reuni%C3%B3n%20de%20entrevista%20contigo." 
-            target="_blank" class="flex items-center gap-2 border border-emerald-500 hover:bg-emerald-500/10
-             px-8 py-4 rounded-xl font-medium transition"><i class="fab fa-whatsapp text-2xl"></i>Contáctame</a>
-        </div>
-      </div>
 
-      <!-- IMAGEN CIRCULAR -->
-      <div class="hidden md:flex items-center justify-end h-full">
-        <img src="/img/123.jpg" 
-             alt="Ermenigildo Orbezo" 
-             class="w-[520px] h-[520px] object-cover 
+        <!-- IMAGEN  -->
+        <div class="hidden md:flex items-center justify-end h-full">
+          <img src="/img/123.jpg" alt="Ermenigildo Orbezo" class="w-[520px] h-[520px] object-cover 
                     border-8 border-emerald-500 
                     rounded-full
                     shadow-2xl 
                     drop-shadow-[0_0_40px_rgba(16,185,129,0.7)]
                     drop-shadow-[0_35px_60px_rgba(0,0,0,0.9)]
                     brightness-110">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ====================== PROYECTOS ====================== -->
-<section id="proyectos" class="py-20 bg-zinc-950">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-4xl font-bold text-center mb-12 green-glow">Proyectos Destacados</h2>
-    
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-      
-      <!-- Proyecto 1 -->
-      <div class="bg-zinc-800 rounded-3xl overflow-hidden hover:scale-105 transition-all group">
-        <img src="/img/lavadora.png" alt="Proyecto 1" class="w-full h-56 object-cover">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2">Lavaplus</h3>
-          <p class="text-zinc-400 text-sm line-clamp-3">Sistema web para gestionar órdenes, clientes y facturación de una lavandería. Desarrollado con Html css MongoDB.</p>
-          <a href="https://lavapluz-d947a.web.app/" target="_blank"
-          class="mt-4 inline-block text-emerald-400 text-sm font-medium hover:text-emerald-300 transition"> Ver Proyecto →</a>
         </div>
-      </div>
-
-      <!-- Proyecto 2 -->
-      <div class="bg-zinc-800 rounded-3xl overflow-hidden hover:scale-105 transition-all group">
-        <img src="/img/tienda.png" alt="Proyecto 2" class="w-full h-52 object-cover">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2">Coquette Grirls</h3>
-          <p class="text-zinc-400 text-sm line-clamp-3">Tienda online de ropa femenina con carrito de compras y panel administrativo. Desarrollado con Html, css y JavaScript.</p>
-          <a href="https://coquette-girls.web.app/" target="_blank"
-          class="mt-4 inline-block text-emerald-400 text-sm font-medium hover:text-emerald-300 transition"> Ver Proyecto →</a>
-        </div>
-      </div>
-
-      <!-- Proyecto 3 -->
-      <div class="bg-zinc-800 rounded-3xl overflow-hidden hover:scale-105 transition-all group">
-        <img src="/img/biodigestor.jpg" alt="Proyecto 3" class="w-full h-52 object-cover">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2">Metanix sac</h3>
-          <p class="text-zinc-400 text-sm line-clamp-3">Página web informativa para Metanix SAC, empresa especializada en biodigestores. Presenta sus productos, beneficios ambientales y soluciones para el tratamiento de residuos orgánicos de manera moderna y profesional</p>
-          <a href="https://metanix-90deb.web.app/index.html" target="_blank"
-          class="mt-4 inline-block text-emerald-400 text-sm font-medium hover:text-emerald-300 transition"> Ver Proyecto →</a>
-        </div>
-      </div>
-      <!-- Proyecto 4 -->
-      <div class="bg-zinc-800 rounded-3xl overflow-hidden hover:scale-105 transition-all group">
-        <img src="/img/ibi.jpg" alt="Proyecto 3" class="w-full h-52 object-cover">
-        <div class="p-6">
-          <h3 class="text-xl font-semibold mb-2">Ibillor</h3>
-          <p class="text-zinc-400 text-sm line-clamp-3">Sistema de visualización de datos con gráficos interactivos.</p>
-          <a href="https://ibillor.vercel.app/index.html" target="_blank"
-          class="mt-4 inline-block text-emerald-400 text-sm font-medium hover:text-emerald-300 transition"> Ver Proyecto →</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- HERRAMIENTAS -->
-<section id="herramientas" class="py-20 bg-zinc-900 overflow-hidden">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-4xl font-bold text-center mb-12 green-glow">Herramientas y Tecnologías</h2>
-    <div class="marquee-container">
-      <div id="tools-marquee" class="marquee-track"></div>
-    </div>
-  </div>
-</section>
-
-<!-- INTELIGENCIA ARTIFICIAL -->
-<section class="py-20 bg-zinc-950 overflow-hidden">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-4xl font-bold text-center mb-4 green-glow">Inteligencia Artificial</h2>
-    <p class="text-center text-zinc-400 mb-12">Herramientas que uso para potenciar mi productividad</p>
-    <div class="marquee-container">
-      <div id="ia-marquee" class="marquee-track"></div>
-    </div>
-  </div>
-</section>
-
-<!-- Resto de tu código (Educación, Experiencia, etc.) se mantiene igual -->>
-
-  <!-- EDUCACIÓN -->
-  <section id="educacion" class="py-20 bg-zinc-900">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-8 font-bold leading-tight green-glow">Formación Académica</h2>
-      <div class="bg-zinc-800 max-w-2xl mx-auto p-10 rounded-3xl">
-        <h3 class="text-2xl font-semibold">Tecnico Diseño Desarrollo de Software </h3>
-        <p class="text-emerald-400 mt-2">Instituto de Educación Superior Privado  “CERTUS”   — 2023 - 2025</p>
-        
-        <div class="bg-zinc-800 max-w-2xl mx-auto p-10 rounded-3xl">
-        <h3 class="text-2xl font-semibold">Educación Secundaria Obligatoria (ESO) </h3>
-        <p class="text-emerald-400 mt-2">CEBA Francisco Bolognesi Cervantes   — 2019 - 2022</p>
-        <!-- <button onclick="window.open('TU_CV_PDF.pdf', '_blank')" 
-                class="mt-8 bg-emerald-500 hover:bg-emerald-600 px-8 py-4 rounded-xl font-medium">
-          <i class="fas fa-download mr-2"></i> Descargar PDF
-        </button> -->
-      </div>
       </div>
     </div>
   </section>
 
+  <!-- ====================== PROYECTOS ====================== -->
+  <section id="proyectos" class="py-20 bg-zinc-950">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-12 green-glow">Proyectos Destacados</h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        <!-- Proyecto 1 -->
+        <div class="bg-zinc-800 rounded-3xl overflow-hidden hover:scale-105 transition-all group">
+          <img src="/img/lavadora.png" alt="Proyecto 1" class="w-full h-56 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Lavaplus</h3>
+            <p class="text-zinc-400 text-sm line-clamp-3">Sistema web para gestionar órdenes, clientes y facturación de
+              una lavandería. Desarrollado con Html css MongoDB.</p>
+            <a href="https://lavapluz-d947a.web.app/" target="_blank"
+              class="mt-4 inline-block text-emerald-400 text-sm font-medium hover:text-emerald-300 transition"> Ver
+              Proyecto →</a>
+          </div>
+        </div>
+
+        <!-- Proyecto 2 -->
+        <div class="bg-zinc-800 rounded-3xl overflow-hidden hover:scale-105 transition-all group">
+          <img src="/img/tienda.png" alt="Proyecto 2" class="w-full h-52 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Coquette Grirls</h3>
+            <p class="text-zinc-400 text-sm line-clamp-3">Tienda online de ropa femenina con carrito de compras y panel
+              administrativo. Desarrollado con Html, css y JavaScript.</p>
+            <a href="https://coquette-girls.web.app/" target="_blank"
+              class="mt-4 inline-block text-emerald-400 text-sm font-medium hover:text-emerald-300 transition"> Ver
+              Proyecto →</a>
+          </div>
+        </div>
+
+        <!-- Proyecto 3 -->
+        <div class="bg-zinc-800 rounded-3xl overflow-hidden hover:scale-105 transition-all group">
+          <img src="/img/biodigestor.jpg" alt="Proyecto 3" class="w-full h-52 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Metanix sac</h3>
+            <p class="text-zinc-400 text-sm line-clamp-3">Página web informativa para Metanix SAC, empresa especializada
+              en biodigestores. Presenta sus productos, beneficios ambientales y soluciones para el tratamiento de
+              residuos orgánicos de manera moderna y profesional</p>
+            <a href="https://metanix-90deb.web.app/index.html" target="_blank"
+              class="mt-4 inline-block text-emerald-400 text-sm font-medium hover:text-emerald-300 transition"> Ver
+              Proyecto →</a>
+          </div>
+        </div>
+        <!-- Proyecto 4 -->
+        <div class="bg-zinc-800 rounded-3xl overflow-hidden hover:scale-105 transition-all group">
+          <img src="/img/ibi.jpg" alt="Proyecto 4" class="w-full h-52 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Ibillor</h3>
+            <p class="text-zinc-400 text-sm line-clamp-3">Sistema de visualización de datos con gráficos interactivos.
+            </p>
+            <a href="https://ibillor.vercel.app/index.html" target="_blank"
+              class="mt-4 inline-block text-emerald-400 text-sm font-medium hover:text-emerald-300 transition"> Ver
+              Proyecto →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCACIÓN -->
+  <section id="educacion" class=" bg-zinc-1000 educacion-section relative overflow-hidden">
+
+    <!-- Overlay Oscuro -->
+    <div class="absolute inset-0 bg-black/95"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="grid md:grid-cols-2 gap-8 items-center min-h-[80vh]">
+
+
+        <div class="space-y-8 md:text-right">
+          <h2 class="text-4xl font-bold leading-tight green-glow">Formación Académica</h2>
+
+          <div class="space-y-8">
+            <div>
+              <h3 class="text-2xl font-semibold">Técnico en Diseño y Desarrollo de Software</h3>
+              <p class="text-emerald-400">Instituto Certus — 2023 - 2025</p>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-semibold">Educación Secundaria Completa</h3>
+              <p class="text-emerald-400">CEBA Francisco Bolognesi Cervantes — 2019 - 2022</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-center md:justify-end">
+          <img src="/img/foto2.png" alt="Exponiendo Proyecto" class="w-full max-w-[620px] md:max-w-[680px] aspect-square object-cover 
+                    rounded-3xl border-4 border-emerald-500 shadow-2xl 
+                    hover:scale-110 transition-transform duration-500 cursor-pointer">
+        </div>
+
+      </div>
+    </div>
+  </section>
   <!-- EXPERIENCIA -->
   <section id="experiencia" class="py-20">
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-4xl font-bold text-center mb-12 font-bold leading-tight green-glow">Experiencia Laboral</h2>
-      <div class="max-w-3xl mx-auto space-y-12 relative before:absolute before:left-6 before:top-0 before:h-full before:w-0.5 before:bg-emerald-900">
+      <div
+        class="max-w-3xl mx-auto space-y-12 relative before:absolute before:left-6 before:top-0 before:h-full before:w-0.5 before:bg-emerald-900">
         <div class="flex gap-8 relative">
-          <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-black font-bold">2020</div>
+          <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-black font-bold">2020
+          </div>
           <div>
             <h3 class="text-xl font-semibold">OPERARIO – SECCIÓN SANDALIAS</h3>
             <p class="text-emerald-400">LA VARESINA S.A.C. (RUC 20100170095)Lima</p>
             <p class="text-emerald-400">Julio 2020 – Marzo 2026</p>
             <p class="text-zinc-400">
-                <li>Realización de tareas de producción en la sección de sandalias.</li>
-                <li> Me destaqué por mi honradez, voluntad y disciplina durante todo el periodo.</li>
-                <li>Me retiré voluntariamente.</li></p>
-            
+              <li>Realización de tareas de producción en la sección de sandalias.</li>
+              <li> Me destaqué por mi honradez, voluntad y disciplina durante todo el periodo.</li>
+              <li>Me retiré voluntariamente.</li>
+            </p>
+
           </div>
         </div>
         <div class="flex gap-8 relative">
-          <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-black font-bold">2017</div>
+          <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-black font-bold">2017
+          </div>
           <div>
             <h3 class="text-xl font-semibold">OPERARIO – SECCIÓN SANDALIAS</h3>
             <p class="text-emerald-400">LA VARESINA S.A.C. (RUC 20100170095)Lima</p>
             <p class="text-emerald-400">Febrero 2017 – Abril 2020</p>
-            <p class="text-zinc-400">                
-                <li> Desempeñé el cargo de Operario en la sección Plantas P.U</li>
-                <li> Demostré honradez, voluntad y disciplina en el cumplimiento de mis funciones.</li></p>            
+            <p class="text-zinc-400">
+              <li> Desempeñé el cargo de Operario en la sección Plantas P.U</li>
+              <li> Demostré honradez, voluntad y disciplina en el cumplimiento de mis funciones.</li>
+            </p>
           </div>
         </div>
         <div class="flex gap-8 relative">
-          <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-black font-bold">2015</div>
+          <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-black font-bold">2015
+          </div>
           <div>
             <h3 class="text-xl font-semibold">AGENTE DE VIGILANCIA PARTICULAR</h3>
             <p class="text-emerald-400">GRUPO VICMER SECURITY SAC (RUC 20511424896) La Victoria, Lima </p>
             <p class="text-emerald-400">Septiembre 2015 – Enero 2017</p>
             <p class="text-zinc-400">
-                <li> Cumplí funciones de Agente de Vigilancia Particular.</li>
-                <li> Me destaqué por el cumplimiento responsable de las tareas asignadas.</li></p>            
+              <li> Cumplí funciones de Agente de Vigilancia Particular.</li>
+              <li> Me destaqué por el cumplimiento responsable de las tareas asignadas.</li>
+            </p>
           </div>
         </div>
         <div class="flex gap-8 relative">
-          <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-black font-bold">2013</div>
+          <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-black font-bold">2013
+          </div>
           <div>
             <h3 class="text-xl font-semibold">AGENTE DE SEGURIDAD</h3>
             <p class="text-emerald-400">LIDER SECURITY S.A.C. (RUC 20393143470) Chorrillos, Lima</p>
             <p class="text-emerald-400">Febrero 2013 – Septiembre 2015</p>
             <p class="text-zinc-400">
-                <li> Desempeñé el cargo de Agente de Seguridad.</li>
-                <li> Demostré puntualidad y responsabilidad en todas las funciones encomendadas</li> </p>            
+              <li> Desempeñé el cargo de Agente de Seguridad.</li>
+              <li> Demostré puntualidad y responsabilidad en todas las funciones encomendadas</li>
+            </p>
           </div>
         </div>
         <div class="flex gap-8 relative">
-          <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-black font-bold">2012</div>
+          <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-black font-bold">2012
+          </div>
           <div>
             <h3 class="text-xl font-semibold"> OPERARIO</h3>
             <p class="text-emerald-400"> INDUSTRIAS TEAL S.A. (RUC 20100046831)Lima, Perú </p>
             <p class="text-emerald-400">Junio 2012 – Diciembre 2012</p>
             <p class="text-zinc-400">
-                <li>Trabajé como Operario en la línea de producción.</li>                
-                </p>            
+              <li>Trabajé como Operario en la línea de producción.</li>
+            </p>
           </div>
         </div>
         <div class="flex gap-8 relative">
-          <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-black font-bold">2010</div>
+          <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center text-black font-bold">2010
+          </div>
           <div>
             <h3 class="text-xl font-semibold"> MANUAL – ÁREA DE TEJEDURÍA PUNTO</h3>
             <p class="text-emerald-400">SURETEX S.A.C. (RUC 20502470745) Santa Anita, Lima</p>
             <p class="text-emerald-400"> Diciembre 2010 – Enero 2012</p>
             <p class="text-zinc-400">
-                <li> Desempeñé funciones de Manual en el área de Tejeduría Punto.</li>
-                <li> Demostré eficiencia, responsabilidad y puntualidad en mi trabajo.</li>
-                <li>Apoyo en Digitacion</li></p>            
+              <li> Desempeñé funciones de Manual en el área de Tejeduría Punto.</li>
+              <li> Demostré eficiencia, responsabilidad y puntualidad en mi trabajo.</li>
+              <li>Apoyo en Digitacion</li>
+            </p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- HABILIDADES BLANDAS -->
+  <!-- HERRAMIENTAS -->
+  <section id="herramientas" class="py-20 bg-zinc-900 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-12 green-glow">Herramientas y Tecnologías</h2>
+      <div class="marquee-container">
+        <div id="tools-marquee" class="marquee-track"></div>
+      </div>
+    </div>
+  </section>
+  <!-- COMENTARIOS -->
+<section id="contacto" class="py-20 bg-zinc-950">
+  <h2 class="text-4xl font-bold text-center mb-16 green-glow">Lo que dicen de mí </h2>
+  <div class="relative max-w-7xl mx-auto px-6">
+    <!-- Flecha Izquierda -->
+    <button id="prevBtn"
+      class="absolute left-0 top-1/2 -translate-y-1/2 z-20
+      w-12 h-12 rounded-full bg-zinc-800 hover:bg-emerald-500
+      transition duration-300 shadow-lg">
+      <i class="fas fa-chevron-left text-white"></i>
+    </button>
+    <!-- Contenedor Carrusel -->
+    <div class="overflow-hidden">
+      <div id="testimonialTrack"
+        class="flex gap-8 transition-transform duration-700 ease-in-out">
+        <!-- Testimonio 1 -->
+        <div class="testimonial-card flex-shrink-0 w-full md:w-[31%]">
+          <img src="/img/testimonio1.jpg"
+            class="w-24 h-24 rounded-full object-cover mx-auto border-4 border-emerald-500">
+
+          <h4 class="text-xl font-bold mt-5 text-center">Juan Pérez</h4>          
+          <p class="text-emerald-400 text-center text-sm mb-4">Gerente de Proyectos</p>
+          <p class="text-zinc-300 text-center">
+            Ermenigildo es un gran profesional, muy responsable y con excelente actitud.
+          </p>
+        </div>
+        <!-- Testimonio 2 -->
+        <div class="testimonial-card flex-shrink-0 w-full md:w-[31%]">
+          <img src="/img/testimonio2.jpg"
+            class="w-24 h-24 rounded-full object-cover mx-auto border-4 border-emerald-500">
+
+          <h4 class="text-xl font-bold mt-5 text-center">
+            María López
+          </h4>
+
+          <p class="text-emerald-400 text-center text-sm mb-4">
+            Docente Certus
+          </p>
+
+          <p class="text-zinc-300 text-center">
+            Destacó por su capacidad de liderazgo y compromiso.
+          </p>
+        </div>
+
+        <!-- Testimonio 3 -->
+        <div class="testimonial-card flex-shrink-0 w-full md:w-[31%]">
+          <img src="/img/testimonio3.jpg"
+            class="w-24 h-24 rounded-full object-cover mx-auto border-4 border-emerald-500">
+
+          <h4 class="text-xl font-bold mt-5 text-center">
+            Carlos Ramos
+          </h4>
+
+          <p class="text-emerald-400 text-center text-sm mb-4">
+            Supervisor
+          </p>
+
+          <p class="text-zinc-300 text-center">
+            Siempre cumple los objetivos y aporta soluciones.
+          </p>
+        </div>
+
+        <!-- Testimonio 4 -->
+        <div class="testimonial-card flex-shrink-0 w-full md:w-[31%]">
+          <img src="/img/testimonio4.jpg"
+            class="w-24 h-24 rounded-full object-cover mx-auto border-4 border-emerald-500">
+
+          <h4 class="text-xl font-bold mt-5 text-center">
+            Ana Torres
+          </h4>
+
+          <p class="text-emerald-400 text-center text-sm mb-4">
+            Analista
+          </p>
+
+          <p class="text-zinc-300 text-center">
+            Excelente compañero de trabajo y muy colaborador.
+          </p>
+        </div>
+
+        <!-- Testimonio 5 -->
+        <div class="testimonial-card flex-shrink-0 w-full md:w-[31%]">
+          <img src="/img/testimonio5.jpg"
+            class="w-24 h-24 rounded-full object-cover mx-auto border-4 border-emerald-500">
+
+          <h4 class="text-xl font-bold mt-5 text-center">
+            Pedro García
+          </h4>
+
+          <p class="text-emerald-400 text-center text-sm mb-4">
+            Product Owner
+          </p>
+
+          <p class="text-zinc-300 text-center">
+            Profesional disciplinado y orientado a resultados.
+          </p>
+        </div>
+
+        <!-- Testimonio 6 -->
+        <div class="testimonial-card flex-shrink-0 w-full md:w-[31%]">
+          <img src="/img/testimonio6.jpg"
+            class="w-24 h-24 rounded-full object-cover mx-auto border-4 border-emerald-500">
+
+          <h4 class="text-xl font-bold mt-5 text-center">
+            Luis Mendoza
+          </h4>
+
+          <p class="text-emerald-400 text-center text-sm mb-4">
+            Coordinador
+          </p>
+
+          <p class="text-zinc-300 text-center">
+            Siempre demuestra compromiso y responsabilidad.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Flecha Derecha -->
+    <button id="nextBtn"
+      class="absolute right-0 top-1/2 -translate-y-1/2 z-20
+      w-12 h-12 rounded-full bg-zinc-800 hover:bg-emerald-500
+      transition duration-300 shadow-lg">
+
+      <i class="fas fa-chevron-right text-white"></i>
+    </button>
+
+  </div>
+
+  <!-- FORMULARIO -->
+  <div class="max-w-4xl mx-auto px-6 mt-20">
+
+    <h2 class="text-4xl font-bold text-center mb-8 green-glow">
+      Deja tu Comentario
+    </h2>
+
+    <p class="text-center text-zinc-400 mb-10">
+      Si estás pasando por mi perfil, te agradecería mucho que me dejes tu opinión.
+      Tu comentario me ayudará a mejorar mi perfil profesional.
+    </p>
+
+    <form action="https://formspree.io/f/xvznovgj" method="POST" class="space-y-6">
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <input type="text" name="nombre" placeholder="Tu Nombre" required
+          class="bg-zinc-800 border border-zinc-700 rounded-xl px-6 py-4 focus:outline-none focus:border-emerald-500">
+
+        <input type="email" name="email" placeholder="Tu Correo Electrónico" required
+          class="bg-zinc-800 border border-zinc-700 rounded-xl px-6 py-4 focus:outline-none focus:border-emerald-500">
+      </div>
+
+      <input type="text" name="cargo" placeholder="Tu Cargo o Posición"
+        class="w-full bg-zinc-800 border border-zinc-700 rounded-xl px-6 py-4 focus:outline-none focus:border-emerald-500">
+
+      <textarea name="mensaje" rows="6" placeholder="Escribe tu mensaje aquí..." required
+        class="w-full bg-zinc-800 border border-zinc-700 rounded-xl px-6 py-4 focus:outline-none focus:border-emerald-500"></textarea>
+
+      <button type="submit"
+        class="w-full bg-emerald-500 hover:bg-emerald-600 py-4 rounded-2xl font-medium transition text-lg">
+        Enviar Comentario
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
   <section class="py-20 bg-zinc-900">
     <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center mb-12 font-bold leading-tight green-glow ">Habilidades Blandas</h2>
-      <div class="grid md:grid-cols-4 gap-6 text-center">
-        <div class="bg-zinc-800 p-6 rounded-2xl">Trabajo en Equipo</div>
-        <div class="bg-zinc-800 p-6 rounded-2xl">Resolución de Problemas</div>
-        <div class="bg-zinc-800 p-6 rounded-2xl">Aprendizaje Continuo</div>
-        <div class="bg-zinc-800 p-6 rounded-2xl">Comunicación Técnica</div>
+      <h2 class="text-4xl font-bold text-center mb-4 green-glow">Inteligencia Artificial</h2>
+      <p class="text-center text-zinc-400 mb-12">Herramientas que uso para potenciar mi productividad</p>
+      <div class="marquee-container">
+        <div id="ia-marquee" class="marquee-track"></div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACTO -->
-  <section id="contacto" class="py-20">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-12 font-bold leading-tight green-glow">Contáctame</h2>
-      <!-- Aquí puedes poner un formulario más adelante -->
-      <p class="text-zinc-400 mb-8">Estoy disponible para nuevas oportunidades.</p>
-      <a href="mailto:larrybill.dev@gmail.com" class="inline-block bg-emerald-500 hover:bg-emerald-600 px-10 py-5 rounded-2xl text-lg font-medium">
-        Enviar Mensaje
-      </a>
-    </div>
-  </section>
+
 
   <!-- FOOTER -->
   <footer class="bg-black py-16 border-t border-zinc-800">
@@ -301,15 +483,17 @@
           <p class="text-emerald-400 text-xl font-bold">Ermenigildo Orbezo</p>
           <p class="text-zinc-500">Desarrollador Java MVC</p>
         </div>
-        
+
         <div class="flex gap-6 text-2xl">
-          <a href="https://www.linkedin.com/in/ermenigildo-orbezo-martinez" class="hover:text-emerald-400"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/ermenigildo-orbezo-martinez" class="hover:text-emerald-400"><i
+              class="fab fa-linkedin"></i></a>
           <a href="https://github.com/eorbezom" class="hover:text-emerald-400"><i class="fab fa-github"></i></a>
-          <a href="https://wa.me/51919750692?text=Hola%2C%20hemos%20visto%20tu%20CV%20y%20estamos%20interesados%20en%20una%20reuni%C3%B3n%20de%20entrevista%20contigo." class="hover:text-emerald-400"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://wa.me/51919750692?text=Hola%2C%20hemos%20visto%20tu%20CV%20y%20estamos%20interesados%20en%20una%20reuni%C3%B3n%20de%20entrevista%20contigo."
+            class="hover:text-emerald-400"><i class="fab fa-whatsapp"></i></a>
         </div>
 
         <div class="text-sm text-zinc-500 text-center md:text-right">
-          © 2026 Larry Bill • Todos los derechos reservados<br>
+          © 2026 Ermenigildo Orbezo • Todos los derechos reservados<br>
           <a href="#" class="hover:text-emerald-400">Términos y Condiciones</a>
         </div>
       </div>
@@ -318,6 +502,7 @@
 
   <script src="portfolio.js"></script>
   <script src="/js/funcion.js"></script>
-    
+
 </body>
+
 </html>
