@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ermenigildo-orbezo.vercel.app/sitemap.xml
