@@ -1,7 +1,14 @@
 {
+  "name": "portafoliocv",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev:css": "npx @tailwindcss/cli -i ./input.css -o ./output.css --watch",
+    "build:css": "npx @tailwindcss/cli -i ./input.css -o ./output.css --minify"
+  },
   "dependencies": {
-    "@tailwindcss/cli": "^4.3.0",
+    "@tailwindcss/cli": "^4.3.2",
     "@vercel/analytics": "^2.0.1",
-    "tailwindcss": "^4.3.0"
+    "tailwindcss": "^4.3.2"
   }
 }

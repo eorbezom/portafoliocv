@@ -1,3 +1,6 @@
+@import "tailwindcss";
+
+
 /** Estilos para el carrusel de herramientas y testimonios, así como para las tarjetas de herramientas y testimonios.
 */
 .marquee-container{
