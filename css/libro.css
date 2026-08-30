@@ -1,0 +1,175 @@
+.green-glow {
+  text-shadow: 0 0 18px rgba(16, 185, 129, 0.45);
+}
+
+.banner-status {
+  margin-top: 72px;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(212, 175, 55, 0.12), transparent 45%),
+    linear-gradient(90deg, #07070a 0%, #10141c 45%, #07070a 100%);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.banner-status-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    min-height: 78vh;
+    padding: 1.5rem 0;
+    gap: 0;
+}
+
+.banner-foto,
+.banner-libro {
+    width: 50%;
+    height: 72vh;
+    object-fit: contain;
+    display: block;
+    
+}
+.banner-foto {
+    margin-right: -40px;
+}
+
+.banner-libro {
+    margin-left: -40px;
+}
+
+.seccion-ficha {
+  background: #09090b;
+}
+
+@media (max-width: 768px) {
+  .banner-status-grid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 1rem;
+  }
+
+  .banner-foto,
+  .banner-libro {
+    height: 52vh;
+  }
+}
+
+/* Fondo oscuro con desenfoque */
+.modal-libro {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+/* Modal visible */
+.modal-libro.abierto {
+    display: flex;
+    opacity: 1;
+}
+
+/* Caja principal */
+.modal-libro-caja {
+    width: 90%;
+    max-width: 500px;
+
+    background: linear-gradient(
+        145deg,
+        #111827,
+        #1f2937
+    );
+
+    border: 1px solid rgba(16,185,129,0.3);
+
+    border-radius: 25px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.6),
+        0 0 30px rgba(16,185,129,0.15);
+
+    transform: scale(0.85);
+    animation: aparecer 0.35s ease forwards;
+}
+
+/* Título */
+.modal-libro-caja h3 {
+    color: #10b981;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Texto */
+.modal-libro-caja p {
+    color: #d4d4d8;
+    line-height: 1.8;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+/* Botón */
+.modal-libro-ok {
+    background: linear-gradient(
+        90deg,
+        #10b981,
+        #059669
+    );
+
+    color: white;
+    border: none;
+    padding: 14px 35px;
+    border-radius: 14px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.modal-libro-ok:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(16,185,129,0.4);
+}
+
+/* Botón cerrar */
+.modal-libro-cerrar {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+
+    background: transparent;
+    border: none;
+
+    color: #aaa;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.modal-libro-cerrar:hover {
+    color: white;
+}
+
+/* Animación */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}

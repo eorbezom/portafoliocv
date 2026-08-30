@@ -249,3 +249,35 @@ if (menuBtn && mobileMenu) {
         mobileMenu.classList.toggle("hidden");
     });
 }
+
+
+/// Dropdown de Proyectos desplegable
+function toggleDropdown() {
+  const dropdown = document.getElementById('dropdown');
+  const chevron = document.getElementById('chevron');
+  
+  if (dropdown && chevron) {
+    dropdown.classList.toggle('hidden');
+    chevron.classList.toggle('rotate-180');
+  }
+}
+
+// Cerrar dropdown al hacer clic fuera
+document.addEventListener('click', (e) => {
+  const container = document.getElementById('projects-container');
+  if (container && !container.contains(e.target)) {
+    const dropdown = document.getElementById('dropdown');
+    const chevron = document.getElementById('chevron');
+    if (dropdown) dropdown.classList.add('hidden');
+    if (chevron) chevron.classList.remove('rotate-180');
+  }
+});
+
+const projectsBtn = document.getElementById("projects-btn");
+
+if (projectsBtn) {
+    projectsBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        toggleDropdown();
+    });
+}
