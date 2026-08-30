@@ -34,9 +34,8 @@ if (btnDescarga && modalLibro) {
     });
 }
 
-
 // =====================================================
-// CARRUSEL DE OTROS LIBROS
+// CARRUSEL INFINITO DE OTROS LIBROS
 // =====================================================
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -46,25 +45,47 @@ document.addEventListener("DOMContentLoaded", () => {
     const next = document.getElementById("librosNext");
     const dots = document.getElementById("librosDots");
 
+    // Verificar que existan los elementos
     if (!track || !prev || !next || !dots) {
+        console.warn("No se encontraron los elementos del carrusel.");
         return;
     }
 
-    const slides = track.querySelectorAll(".libro-slide");
+    // Obtener los libros
+    const slides = Array.from(
+        track.querySelectorAll(".libro-slide")
+    );
 
+    // Si no hay libros, detener
+    if (slides.length === 0) {
+        return;
+    }
+
+    // Posición actual
     let currentIndex = 0;
 
 
-    // Crear indicadores
+    // =====================================================
+    // CREAR LOS PUNTOS
+    // =====================================================
+
     slides.forEach((slide, index) => {
 
         const dot = document.createElement("button");
 
         dot.type = "button";
 
-        dot.className =
-            "w-3 h-3 rounded-full transition-all duration-300";
+        dot.setAttribute(
+            "aria-label",
+            `Mostrar libro ${index + 1}`
+        );
 
+        dot.className =
+            "w-3 h-3 rounded-full bg-zinc-700 " +
+            "hover:bg-emerald-400 " +
+            "transition-all duration-300";
+
+        // Al hacer clic en el punto
         dot.addEventListener("click", () => {
 
             currentIndex = index;
@@ -78,9 +99,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // Actualizar carrusel
+    // =====================================================
+    // ACTUALIZAR CARRUSEL
+    // =====================================================
+
     function actualizarCarrusel() {
 
+        // Mover el carrusel
         track.style.transform =
             `translateX(-${currentIndex * 100}%)`;
 
@@ -94,68 +119,97 @@ document.addEventListener("DOMContentLoaded", () => {
             if (index === currentIndex) {
 
                 dot.className =
-                    "w-3 h-3 rounded-full bg-emerald-500 scale-125 transition-all duration-300";
+                    "w-4 h-4 rounded-full " +
+                    "bg-emerald-500 " +
+                    "scale-110 " +
+                    "transition-all duration-300";
 
             } else {
 
                 dot.className =
-                    "w-3 h-3 rounded-full bg-zinc-700 hover:bg-emerald-400 transition-all duration-300";
+                    "w-3 h-3 rounded-full " +
+                    "bg-zinc-700 " +
+                    "hover:bg-emerald-400 " +
+                    "transition-all duration-300";
 
             }
 
         });
 
-
-        // Botón anterior
-        prev.disabled =
-            currentIndex === 0;
-
-        prev.style.opacity =
-            currentIndex === 0 ? "0.35" : "1";
-
-
-        // Botón siguiente
-        next.disabled =
-            currentIndex === slides.length - 1;
-
-        next.style.opacity =
-            currentIndex === slides.length - 1
-                ? "0.35"
-                : "1";
-
     }
 
 
-    // Anterior
+    // =====================================================
+    // BOTÓN ANTERIOR
+    // =====================================================
+
     prev.addEventListener("click", () => {
 
-        if (currentIndex > 0) {
+        if (currentIndex === 0) {
+
+            // Si estamos en el primer libro,
+            // ir al último
+            currentIndex = slides.length - 1;
+
+        } else {
 
             currentIndex--;
 
-            actualizarCarrusel();
-
         }
+
+        actualizarCarrusel();
 
     });
 
 
-    // Siguiente
+    // =====================================================
+    // BOTÓN SIGUIENTE
+    // =====================================================
+
     next.addEventListener("click", () => {
 
-        if (currentIndex < slides.length - 1) {
+        if (currentIndex === slides.length - 1) {
+
+            // Si estamos en el último libro,
+            // volver al primero
+            currentIndex = 0;
+
+        } else {
 
             currentIndex++;
 
-            actualizarCarrusel();
+        }
+
+        actualizarCarrusel();
+
+    });
+
+
+    // =====================================================
+    // SOPORTE PARA TECLADO
+    // =====================================================
+
+    document.addEventListener("keydown", (event) => {
+
+        if (event.key === "ArrowLeft") {
+
+            prev.click();
+
+        }
+
+        if (event.key === "ArrowRight") {
+
+            next.click();
 
         }
 
     });
 
 
-    // Iniciar
+    // =====================================================
+    // INICIAR CARRUSEL
+    // =====================================================
+
     actualizarCarrusel();
 
 });
-
