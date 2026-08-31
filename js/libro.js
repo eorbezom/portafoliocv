@@ -1,23 +1,51 @@
-const btnDescarga = document.getElementById("btnDescarga");
-const modalLibro = document.getElementById("modalLibro");
-const cerrarModalLibro = document.getElementById("cerrarModalLibro");
-const okModalLibro = document.getElementById("okModalLibro");
 
-function abrirModalLibro() {
-    if (modalLibro) {
-        modalLibro.classList.add("abierto");
+// =====================================================
+// MODAL DEL LIBRO
+// =====================================================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const btnDescarga = document.getElementById("btnDescarga");
+    const modalLibro = document.getElementById("modalLibro");
+    const cerrarModalLibro = document.getElementById("cerrarModalLibro");
+    const okModalLibro = document.getElementById("okModalLibro");
+
+
+    // -----------------------------
+    // ABRIR MODAL
+    // -----------------------------
+
+    function abrirModalLibro() {
+
+        if (modalLibro) {
+            modalLibro.classList.add("abierto");
+            document.body.style.overflow = "hidden";
+        }
+
     }
-}
 
-function cerrarModal() {
-    if (modalLibro) {
-        modalLibro.classList.remove("abierto");
+
+    // -----------------------------
+    // CERRAR MODAL
+    // -----------------------------
+
+    function cerrarModal() {
+
+        if (modalLibro) {
+            modalLibro.classList.remove("abierto");
+            document.body.style.overflow = "";
+        }
+
     }
-}
 
-if (btnDescarga && modalLibro) {
 
-    btnDescarga.addEventListener("click", abrirModalLibro);
+    // -----------------------------
+    // EVENTOS DEL MODAL
+    // -----------------------------
+
+    if (btnDescarga) {
+        btnDescarga.addEventListener("click", abrirModalLibro);
+    }
 
     if (cerrarModalLibro) {
         cerrarModalLibro.addEventListener("click", cerrarModal);
@@ -27,47 +55,122 @@ if (btnDescarga && modalLibro) {
         okModalLibro.addEventListener("click", cerrarModal);
     }
 
-    modalLibro.addEventListener("click", (e) => {
-        if (e.target === modalLibro) {
+
+    // Cerrar haciendo clic fuera de la caja
+
+    if (modalLibro) {
+
+        modalLibro.addEventListener("click", (event) => {
+
+            if (event.target === modalLibro) {
+                cerrarModal();
+            }
+
+        });
+
+    }
+
+
+    // Cerrar modal con ESC
+
+    document.addEventListener("keydown", (event) => {
+
+        if (event.key === "Escape") {
+
             cerrarModal();
+
         }
+
     });
-}
 
-// =====================================================
-// CARRUSEL INFINITO DE OTROS LIBROS
-// =====================================================
 
-document.addEventListener("DOMContentLoaded", () => {
+
+    // =====================================================
+    // CARRUSEL DE OTROS LIBROS
+    // =====================================================
 
     const track = document.getElementById("librosTrack");
     const prev = document.getElementById("librosPrev");
     const next = document.getElementById("librosNext");
     const dots = document.getElementById("librosDots");
 
-    // Verificar que existan los elementos
+
+    // Verificar elementos
+
     if (!track || !prev || !next || !dots) {
-        console.warn("No se encontraron los elementos del carrusel.");
+
+        console.warn("Carrusel: faltan elementos HTML.");
+
         return;
+
     }
 
-    // Obtener los libros
+
+    // Obtener libros
+
     const slides = Array.from(
         track.querySelectorAll(".libro-slide")
     );
 
-    // Si no hay libros, detener
+
     if (slides.length === 0) {
+
+        console.warn("Carrusel: no existen .libro-slide.");
+
         return;
+
     }
 
-    // Posición actual
+
+    // =====================================================
+    // CONFIGURACIÓN
+    // =====================================================
+
     let currentIndex = 0;
 
+    const totalSlides = slides.length;
+
 
     // =====================================================
-    // CREAR LOS PUNTOS
+    // CONFIGURAR TRACK
     // =====================================================
+
+    /*
+        El track tendrá exactamente el ancho
+        necesario para todos los libros.
+
+        Ejemplo:
+
+        3 libros = 300%
+        4 libros = 400%
+    */
+
+    track.style.width = `${totalSlides * 100}%`;
+
+    track.style.display = "flex";
+
+    track.style.transition = "transform 0.5s ease";
+
+
+    // Cada libro ocupa exactamente 1/n del track
+
+    slides.forEach((slide) => {
+
+        slide.style.flex = `0 0 ${100 / totalSlides}%`;
+
+        slide.style.width = `${100 / totalSlides}%`;
+
+        slide.style.boxSizing = "border-box";
+
+    });
+
+
+    // =====================================================
+    // CREAR PUNTOS
+    // =====================================================
+
+    dots.innerHTML = "";
+
 
     slides.forEach((slide, index) => {
 
@@ -85,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "hover:bg-emerald-400 " +
             "transition-all duration-300";
 
-        // Al hacer clic en el punto
+
         dot.addEventListener("click", () => {
 
             currentIndex = index;
@@ -94,9 +197,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
+
         dots.appendChild(dot);
 
     });
+
 
 
     // =====================================================
@@ -105,14 +210,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function actualizarCarrusel() {
 
-        // Mover el carrusel
+
+        /*
+            IMPORTANTE:
+
+            Como cada slide ocupa:
+
+            100 / cantidad
+
+            entonces para mover un libro
+            usamos el índice directamente.
+
+            Ejemplo:
+
+            Libro 1 → 0%
+            Libro 2 → -33.33%
+            Libro 3 → -66.66%
+
+            si existen 3 libros.
+        */
+
+
+        const desplazamiento =
+            currentIndex * (100 / totalSlides);
+
+
         track.style.transform =
-            `translateX(-${currentIndex * 100}%)`;
+            `translateX(-${desplazamiento}%)`;
 
 
-        // Actualizar puntos
+        // =================================================
+        // ACTUALIZAR PUNTOS
+        // =================================================
+
         const indicadores =
             dots.querySelectorAll("button");
+
 
         indicadores.forEach((dot, index) => {
 
@@ -139,17 +272,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
+
     // =====================================================
     // BOTÓN ANTERIOR
     // =====================================================
 
-    prev.addEventListener("click", () => {
+    prev.addEventListener("click", (event) => {
+
+        event.preventDefault();
+
+        event.stopPropagation();
+
 
         if (currentIndex === 0) {
 
-            // Si estamos en el primer libro,
-            // ir al último
-            currentIndex = slides.length - 1;
+            currentIndex = totalSlides - 1;
 
         } else {
 
@@ -157,21 +294,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
+
         actualizarCarrusel();
 
     });
+
 
 
     // =====================================================
     // BOTÓN SIGUIENTE
     // =====================================================
 
-    next.addEventListener("click", () => {
+    next.addEventListener("click", (event) => {
 
-        if (currentIndex === slides.length - 1) {
+        event.preventDefault();
 
-            // Si estamos en el último libro,
-            // volver al primero
+        event.stopPropagation();
+
+
+        if (currentIndex === totalSlides - 1) {
+
             currentIndex = 0;
 
         } else {
@@ -180,24 +322,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
+
         actualizarCarrusel();
 
     });
 
 
+
     // =====================================================
-    // SOPORTE PARA TECLADO
+    // TECLADO
     // =====================================================
 
     document.addEventListener("keydown", (event) => {
 
+        // Si el usuario está escribiendo en un input
+        // no mover el carrusel.
+
+        const elemento = document.activeElement;
+
+        if (
+            elemento &&
+            (
+                elemento.tagName === "INPUT" ||
+                elemento.tagName === "TEXTAREA"
+            )
+        ) {
+
+            return;
+
+        }
+
+
         if (event.key === "ArrowLeft") {
+
+            event.preventDefault();
 
             prev.click();
 
         }
 
+
         if (event.key === "ArrowRight") {
+
+            event.preventDefault();
 
             next.click();
 
@@ -206,10 +373,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
+
     // =====================================================
-    // INICIAR CARRUSEL
+    // INICIAR
     // =====================================================
 
     actualizarCarrusel();
 
 });
+
